@@ -26,7 +26,7 @@ class BlogsController < ApplicationController
 		@blog.blog_type = @type
 		@blog.location = Location.find_by_name(@name)
 		@blog.category = @category
-		if @blog.save
+		if @blog.save!
 			redirect_to blogs_path(type: @type, name: @name, category: @category), notice: "#{@type} Blog is successfully created."
 		else
 			redirect_to blogs_path(type: @type, name: @name, category: @category), alert: "Failed to create #{@type} Blog."

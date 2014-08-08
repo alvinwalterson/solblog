@@ -5,9 +5,9 @@
 	- if @name.nil?
 		.header
 			- if @type == Blog::BLOG_MYSOL && !@blogs.nil?
-				= link_to 'Edit MySol', edit_blog_path(@blogs, type: @type)
+				= link_to 'Edit MySol', edit_blog_path(@blogs.first, type: Blog::BLOG_MYSOL)
 			- else
-				= link_to 'Add new blog', new_blog_path(type: @type)
+				= link_to 'Add new blog', new_blog_path(type: Blog::BLOG_MAIN)
 		%div
 		%br
 		%br
@@ -33,7 +33,7 @@
 									- else
 										= link_to 'Show', blog_path(blog, type: @type)
 									- unless @type == Blog::BLOG_MYSOL
-										= link_to 'Delete', blog_path(blog, type: @type), method: :delete, data: {confirm: 'Are you sure?'}
+										= link_to 'Delete', blog_path(blog, type: Blog::BLOG_MAIN), method: :delete, data: {confirm: 'Are you sure?'}
 					- else
 						%tr
 							%td{colspan: 5}

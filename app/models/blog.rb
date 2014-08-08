@@ -6,7 +6,7 @@ class Blog < ActiveRecord::Base
 	BLOG_PLAY = 'PlayBlog'
 	BLOG_STAY = 'StayBlog'
 
-	BLOG_TYPES = ['', BLOG_MAIN, BLOG_MYSOL, BLOG_EAT, BLOG_PLAY, BLOG_STAY]
+	BLOG_TYPES = [nil, BLOG_MAIN, BLOG_MYSOL, BLOG_EAT, BLOG_PLAY, BLOG_STAY]
 
 	has_many :photos, dependent: :destroy
 	belongs_to :location
