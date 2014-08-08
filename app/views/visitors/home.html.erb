@@ -1,3 +1,45 @@
-<h3> This is Home Page</h3>
-
-<%= image_tag '006_tulum_theredlist.jpg', :size => '100x100', class: 'small' %>
+<div class="main">
+    <div class="image_gallery">
+        <ul id="myGallery">
+            <% @locations.each do |l| %>
+                <li><%= image_tag l.photo.picture.url, title: l.name %></li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+<div class="main">
+    <div class="sol_blog_section">
+        <div>
+            <div style="float:left;width:35%;"><hr/><hr/></div>
+            <div style="float:left;width:30%;" class="sol_blog_title">SOL BLOG</div>
+            <div style="float:left;width:35%;"><hr/><hr/></div>
+            <div style="clear: both;"></div>
+        </div>
+        <br />
+        <div class="sol_blog_main">
+            <br />
+            <div>
+                <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>
+            </div>
+            <br />
+            <div class="blog_title">
+                <%= @main_blog.title %>
+            </div>
+            <div class="blog_content">
+                <%= raw @main_blog.body %>
+            </div>
+        </div>
+    </div>
+    <div class="sol_blog_section">
+        <div>
+            <div style="float:left;width:35%;"><hr/><hr/></div>
+            <div style="float:left;width:30%;" class="sol_blog_title">INSTAGRAM</div>
+            <div style="float:left;width:35%;"><hr/><hr/></div>
+            <div style="clear: both;"></div>
+        </div>
+        <div id="wrapper">
+            <div id="instafeed"></div>
+        </div>
+    </div>    
+    </div>
+</div>

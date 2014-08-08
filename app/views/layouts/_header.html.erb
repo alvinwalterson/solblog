@@ -1,0 +1,63 @@
+<div class="main">
+    <div class="banner">
+        <%= image_tag 'logo.jpg', :size => '792x147'%>
+    </div>
+    <div class="menubar">
+        <hr/><hr/>
+        <div class="menu_container">
+            <ul id="menu" class="clearfix">
+                <li>
+                    <% if user_signed_in? %>
+                        <%= link_to "SOL BLOG", blogs_path(type: Blog::BLOG_MAIN) %>
+                    <% else %>
+                        <%= link_to "SOL BLOG", solblog_path %>
+                    <% end %>
+                </li>
+                <li class="menu_dot">&bull;</li>
+                <li><a href=""
+                        onmouseover="mopen('m2')" 
+                        onmouseout="mclosetime()">DESTINATION</a>
+                    <div id="m2" 
+                        onmouseover="mcancelclosetime()" 
+                        onmouseout="mclosetime()">
+                        <% @locations.each do |l| %>
+                            <% if user_signed_in? %>
+                                <%= link_to l.name, blogs_path(name: l.name) %>
+                            <% else %>
+                                <%= link_to l.name, destination_path(name: l.name) %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </li>
+                <li class="menu_dot">&bull;</li>
+                <li>
+                    <% if user_signed_in? %>
+                        <%= link_to "MY SOL", blogs_path(type: Blog::BLOG_MYSOL) %>
+                    <% else %>
+                        <%= link_to "MY SOL", mysol_path, class: "short_title" %>
+                    <% end %>
+                </li>
+                <li class="menu_dot">&bull;</li>
+                <li>
+                    <%= link_to "TRAVEL CONSULTANT", travel_path, class: "long_title" %>
+                </li>
+            </ul>
+            <div style="clear:both"></div>
+        </div>
+        <hr/>
+        <hr/>
+    </div>
+
+    <div class="web_links">
+        <% if user_signed_in? %>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <% else %>
+            <a href="#" class="share_icon share_instagram" target="_blank" title="Share on Instagram"></a>
+            <a href="#" class="share_icon share_pinterst" target="_blank" title="Share on Pinterst"></a>
+            <a href="#" class="share_icon share_twitter" target="_blank" title="Share on Twitter"></a>
+            <a href="#" class="share_icon share_facebook" target="_blank" title="Share on Facebook"></a>
+            <a href="#" class="share_icon share_google" target="_blank" title="Share on Google"></a>
+        <% end%>
+    </div>
+
+</div>

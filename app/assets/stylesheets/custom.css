@@ -1,0 +1,23 @@
+.gv_frame .gv_caption {
+    position: absolute;
+    top: 34px;
+    left: 17px;
+    font: 22pt Otto;
+    line-height: 20px;
+}
+
+.gv_frame {
+    background-color: grey;
+}
+
+div.gv_galleryWrap {
+    background-color: transparent;
+}
+
+.gv_panelWrap {
+    border: 10px solid rgb(244, 173, 112);
+}
+
+.gv_galleryWrap {
+    margin: 0 auto;
+}

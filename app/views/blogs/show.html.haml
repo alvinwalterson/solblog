@@ -1,0 +1,8 @@
+%div.main
+	%div.blog_section
+		%pre
+			= link_to "Back", blogs_path(type: @type)
+		%div= image_tag @blog.picture.url, class: "blog_big_img"
+		%div.blog_title
+			= @blog.created_at.strftime "%D" + "  -  " + @blog.title
+		%div.blog_content= raw @blog.body

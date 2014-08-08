@@ -1,0 +1,251 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font: 10pt Florencesans;
+    color : rgb(60, 60, 60)
+}
+
+hr {
+    border : 0px;
+    background-color: rgb(176, 176, 177);
+    width : 100%;
+    height : 2px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    clear: both;
+    display: table;
+}
+
+.main {
+    width : 792px;
+    margin : 0 auto;
+}
+
+.main div {
+    text-align: center
+}
+
+.banner {
+    
+}
+
+.menubar {
+    
+}
+
+.menu_container {
+    height : 40px;
+}
+
+#menu {
+    padding: 0;
+    z-index: 30;
+    margin: 0 auto;
+    width: 630px;
+    padding-top: 5px;
+}
+
+#menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    font: 12pt Florencesans;
+}
+
+#menu li a {
+    display: block;
+    margin: 0 1px 0 0;
+    padding: 4px 0px;
+    width: 100px;
+    color: rgb(150, 150, 150);
+    text-align: center;
+    text-decoration: none;
+    font: 12pt Florencesans;
+}
+
+#menu li.menu_dot {
+    display: block;
+    margin: 0 1px 0 0;
+    padding: 4px 0px;
+    width: 40px;
+    color: rgb(244, 173, 112);
+    text-align: center;
+    text-decoration: none;
+    font: bold 12pt Florencesans;
+}
+
+#menu li a.short_title {
+    width : 80px;
+}
+
+#menu li a.long_title {
+    width : 180px;
+}
+
+#menu li a:hover {
+    text-decoration: underline;
+    color : rgb(249, 209, 175)
+}
+
+#menu div {
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+    border: 1px solid rgb(249, 209, 175);
+    width : 80px
+}
+
+#menu div a {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 5px 0px;
+    width: auto;
+    text-align: left;
+    text-decoration: none;
+    background: #FFF;
+    font: 12pt Florencesans;
+    color : rgb(249, 209, 175)
+}
+
+#menu div a:hover {
+    text-decoration: underline;
+    color: rgb(176, 176, 177)
+}
+
+.web_links {
+    text-align: center;
+    margin : 30px 0px;
+}
+
+.share_icon {
+    display: inline-block;
+    width : 30px;
+    height : 29px;
+}
+
+.share_facebook {
+    background-image: url(../images/share_facebook.jpg);    
+}
+
+.share_instagram {
+    background-image: url(../images/share_instagram.jpg);    
+}
+
+.share_pinterst {
+    background-image: url(../images/share_pinterst.jpg);    
+}
+
+.share_google {
+    background-image: url(../images/share_google.jpg);    
+}
+
+.share_twitter {
+    background-image: url(../images/share_twitter.jpg);    
+}
+
+.image_gallery {
+    padding: 20px 0px
+}
+
+.about_image {
+}
+
+.about_quote {
+    padding: 50px 0px 0px 0px;
+    font-size: 17pt;
+}
+
+div.about_content {
+    padding: 40px 10px;
+    text-align: left
+}
+
+.quote_font {
+    color: rgb(248, 200, 159);
+    font-size: 50pt ;
+    display: inline-block;
+}
+
+.sol_blog_section {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.sol_blog div div hr {
+    border : 0px;
+    background-color: rgb(176, 176, 177);
+    width : 100%;
+    height : 2px;
+}
+
+.sol_blog_main {
+    height : 500px;
+    overflow: scroll;
+    overflow-x : hidden
+}
+
+.sol_blog_title {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 18pt;
+}
+
+.instagram {
+    height : 100px
+}
+
+.blog_title {
+    font : 50pt Otto;
+}
+
+div.blog_content {
+    text-align: left;
+    padding: 0px 10px;
+}
+
+.sol_blog_rising {
+    font-size: 20pt;   
+}
+
+.blog_section {
+    padding: 30px 10px;
+    text-align: center;
+}
+
+div.blog_title {
+    padding: 20px 0px;
+}
+
+div.submenu {
+    padding: 20px 0px;
+}
+
+div.submenu_title {
+    color : rgb(136, 136, 136);
+    font : 40pt Otto     
+}
+
+div.submenu div hr {
+    margin: 25px 0px;
+}
+
+div.travel_blog {
+    margin: 20px 0px;
+    display: inline-block;
+}
+
+div.travel_blog_content {
+    margin: 0px 0px 0px 20px;
+    float: left;
+}
+
+div.travel_blog_title {
+    padding: 10px 0px;
+    font-size: 13pt;
+}

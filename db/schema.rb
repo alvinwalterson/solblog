@@ -11,29 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807082454) do
+ActiveRecord::Schema.define(version: 20140808190813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "destinations", force: true do |t|
+  create_table "blogs", force: true do |t|
+    t.integer  "location_id"
+    t.string   "title"
+    t.text     "body"
+    t.string   "blog_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.boolean  "category"
+    t.boolean  "featured",             default: false
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "mainblogs", force: true do |t|
+  create_table "photos", force: true do |t|
+    t.integer  "location_id"
+    t.integer  "blog_id"
+    t.string   "title"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "mysols", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "travels", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.boolean  "landing",              default: true
   end
 
   create_table "users", force: true do |t|
