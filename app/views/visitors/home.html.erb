@@ -2,7 +2,7 @@
     <div class="image_gallery">
         <ul id="myGallery">
             <% @locations.each do |l| %>
-                <li><%= image_tag l.photo.picture.url, title: l.name %></li>
+                <li><%= image_tag l.landing_url, title: l.name %></li>
             <% end %>
         </ul>
     </div>

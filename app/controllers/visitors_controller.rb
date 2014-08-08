@@ -16,7 +16,7 @@ class VisitorsController < ApplicationController
 
 	def destination
 		@location = Location.includes(:blogs).includes(:photos).find_by_name params[:name]
-		@photo = @location.photo
+		@photo = @location.landing_url
 		@photos = @location.all_photos
 		@destination = @location.blogs.destination.first
 		@eat_blogs = @location.blogs.destination.eat

@@ -23,7 +23,7 @@ locations = [
 
 locations.each do |l|
 	picture = File.open("#{Rails.root}/app/assets/images/#{l[:picture]}")
-	location = Location.create(name: l[:name])
+	location = Location.create(name: l[:name], landing_url: "/assets/#{l[:picture]}")
 
 	photo = Photo.new(title: l[:name], picture: picture, url: 'javascript:void(0)')
 	photo.location_id = location.id
