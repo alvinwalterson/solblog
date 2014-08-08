@@ -1,22 +1,26 @@
 <div class="main">
     <div class="sol_blog_rising">SOL BLOG</div>
-    <div class="blog_section">
-        <div>
-            <%= image_tag @main_blog.picture.url, class: "blog_big_img" %>
+    <% unless @main_blog.nil? %>
+        <div class="blog_section">
+            <div>
+                <%= image_tag @main_blog.picture.url, class: "blog_big_img" %>
+            </div>
+            <div class="blog_title">
+                <%=  @main_blog.created_at.strftime "%D" + "  -  " + @main_blog.title %>
+            </div>
+            <div class="blog_content"><%= raw @main_blog.body %></div>
         </div>
-        <div class="blog_title">
-            <%=  @main_blog.created_at.strftime "%D" + "  -  " + @main_blog.title %>
-        </div>
-        <div class="blog_content"><%= raw @main_blog.body %></div>
-    </div>
+    <% end %>
     <hr />
-    <div class="blog_section">
-        <div>
-            <%= image_tag @old_blog.picture.url, class: "blog_big_img" %>
+    <% unless @old_blog.nil? %>
+        <div class="blog_section">
+            <div>
+                <%= image_tag @old_blog.picture.url, class: "blog_big_img" %>
+            </div>
+            <div class="blog_title">
+                <%=  @old_blog.created_at.strftime "%D" + "  -  " + @old_blog.title %>
+            </div>
+            <div class="blog_content"><%= raw @old_blog.body %></div>
         </div>
-        <div class="blog_title">
-            <%=  @old_blog.created_at.strftime "%D" + "  -  " + @old_blog.title %>
-        </div>
-        <div class="blog_content"><%= raw @old_blog.body %></div>
-    </div>
+    <% end %>
 </div>

@@ -1,18 +1,20 @@
 <div class="main">
-    <div class="about_image">
-        <%= image_tag @mysol_blog.picture.url, class: "blog_big_img" %>
-    </div>
-    <div class="about_quote">
-        <div class="quote_font">&ldquo;</div>
-        <div style="display: inline-block; vertical-align: middle; height: 90px;">
-            &nbsp;&nbsp;
-            <%= @mysol_blog.title %>
-            &nbsp;&nbsp;</div>
-        <div class="quote_font">&rdquo;</div>
-    </div>
-    <hr />
-    <div class="about_content">
-        <%= raw @mysol_blog.body %>
-    </div>
+    <% unless @mysol_blog.nil? %>
+        <div class="about_image">
+            <%= image_tag @mysol_blog.picture.url, class: "blog_big_img" %>
+        </div>
+        <div class="about_quote">
+            <div class="quote_font">&ldquo;</div>
+            <div style="display: inline-block; vertical-align: middle; height: 90px;">
+                &nbsp;&nbsp;
+                <%= @mysol_blog.title %>
+                &nbsp;&nbsp;</div>
+            <div class="quote_font">&rdquo;</div>
+        </div>
+        <hr />
+        <div class="about_content">
+            <%= raw @mysol_blog.body %>
+        </div>
+    <% end %>
     <hr />
 </div>

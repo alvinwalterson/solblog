@@ -18,16 +18,18 @@
         <br />
         <div class="sol_blog_main">
             <br />
-            <div>
-                <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>
-            </div>
-            <br />
-            <div class="blog_title">
-                <%= @main_blog.title %>
-            </div>
-            <div class="blog_content">
-                <%= raw @main_blog.body %>
-            </div>
+            <% unless @main_blog.nil? %>
+                <div>
+                    <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>
+                </div>
+                <br />
+                <div class="blog_title">
+                    <%= @main_blog.title %>
+                </div>
+                <div class="blog_content">
+                    <%= raw @main_blog.body %>
+                </div>
+            <% end %>
         </div>
     </div>
     <div class="sol_blog_section">

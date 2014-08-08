@@ -23,15 +23,17 @@
         <br />
         <div class="sol_blog_main">
             <br />
-            <div>
-                <%= image_tag @destination.picture.url, class: "blog_mid_img" %>
-            </div>
-            <div class="blog_title">
-                <%= @destination.title %>
-            </div>
-            <div class="blog_content">
-                <%= raw @destination.body %>
-            </div>
+            <% unless @destination.nil? %>
+                <div>
+                    <%= image_tag @destination.picture.url, class: "blog_mid_img" %>
+                </div>
+                <div class="blog_title">
+                    <%= @destination.title %>
+                </div>
+                <div class="blog_content">
+                    <%= raw @destination.body %>
+                </div>
+            <% end %>
         </div>
     </div>
     <div>
