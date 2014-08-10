@@ -24,6 +24,7 @@ body {
     background-color: rgb(176, 176, 177);
     width : 100%;
     height : 2px;
+    margin: 7px 0px;
 }
 
 .clearfix:before,
@@ -32,11 +33,11 @@ body {
     display: table;
 }
 
-.main {
+/*.main {
     width : 792px;
     margin : 0 auto;
 }
-
+*/
 .banner {
     
 }
@@ -191,7 +192,7 @@ div.about_content {
     padding-top: 30px;
 }
 
-.sol_blog div div hr {
+.sol_blog div.sol_blog_section hr {
     border : 0px;
     background-color: rgb(176, 176, 177);
     width : 100%;
@@ -242,7 +243,7 @@ div.submenu {
     padding: 20px 0px;
 }
 
-div.submenu_title {
+.submenu_title {
     color : rgb(136, 136, 136);
     font : 40pt Otto     
 }
@@ -264,21 +265,6 @@ div.travel_blog_content {
 div.travel_blog_title {
     padding: 10px 0px;
     font-size: 13pt;
-}
-
-img.blog_big_img {
-    width : 750px;
-    height : 500px
-}
-
-img.blog_mid_img {
-    width : 700px;
-    height : 500px
-}
-
-img.blog_small_img {
-    width : 100%;
-    height : 300px
 }
 
 #blog_edit_table thead{

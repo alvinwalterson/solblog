@@ -38,7 +38,15 @@ class BlogsController < ApplicationController
 	end
 
 	def select_top
-		raise
+		@location = Location.find_by_name params[:name]
+		@location.sub_blogs.update_all featured: false
+		@blogs = Blog.where(id: params[:featured])
+
+		if @blogs.update_all featured: true
+			redirect_to blogs_path(type: @type, name: @name, category: @category), notice: "Selecting top blogs is successfully finished."
+		else
+			redirect_to blogs_path(type: @type, name: @name, category: @category), notice: "Failed to select top blogs."
+		end
 	end
 
 	def update

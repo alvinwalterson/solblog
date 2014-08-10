@@ -7,7 +7,7 @@ class VisitorsController < ApplicationController
 	end
 
 	def solblog
-		@main_blog, @old_blog = Blog.main_blogs.limit 2
+		@old_blog, @main_blog = Blog.main_blogs.limit 2
 	end
 
 	def mysol
@@ -19,9 +19,10 @@ class VisitorsController < ApplicationController
 		@photo = @location.landing_url
 		@photos = @location.all_photos
 		@destination = @location.blogs.destination.first
-		@eat_blogs = @location.blogs.destination.eat
-		@stay_blogs = @location.blogs.destination.stay
-		@play_blogs = @location.blogs.destination.play
+		@eat_blogs = @location.blogs.eat
+		@stay_blogs = @location.blogs.stay
+		@play_blogs = @location.blogs.play
+		@featured_blogs = @location.sub_blogs.featured
 	end
 
 	def travel

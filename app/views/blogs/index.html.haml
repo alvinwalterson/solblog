@@ -44,7 +44,7 @@
 	- else
 		%h2 - Landing page
 		.header
-			= link_to 'Add New Blog', new_blog_path(type: @type, name: @name, category: @category)
+			= link_to 'Add New Blog', new_blog_path(type: @type, name: @name, category: true)
 		%table#blog_edit_table{:align=> 'center'}
 			%thead
 				%td{:width=>100} Title
@@ -61,9 +61,9 @@
 							%td= image_tag blog.picture.url(:thumb)
 							%td= blog.created_at.strftime "%D"
 							%td
-								= link_to 'Edit', edit_blog_path(blog, type: @type, name: @name, category: @category)
+								= link_to 'Edit', edit_blog_path(blog, type: @type, name: @name, category: true)
 								= link_to 'Show', destination_path(name: @name)
-								= link_to 'Delete', blog_path(blog, type: @type, name: @name, category: @category), method: :delete, data: {confirm: 'Are you sure?'}
+								= link_to 'Delete', blog_path(blog, type: @type, name: @name, category: true), method: :delete, data: {confirm: 'Are you sure?'}
 				- else
 					%tr
 						%td{colspan: 5}
@@ -73,7 +73,7 @@
 								here.
 		
 		%h2 - Select Top Blogs
-		= form_for :top_blogs, url: select_top_path(type: @type, name: @name, category: true), method: :put do |f|
+		= form_tag select_top_path(type: @type, name: @name, category: true), method: :put do
 			%table#blog_edit_table{:align=> 'center'}
 				%thead
 					%td{:width=>100} Check
@@ -85,13 +85,12 @@
 					- if @location.sub_blogs.length > 0
 						- @location.sub_blogs.each do |blog|
 							%tr
-								%td= f.check_box :featured, checked: blog.featured, name: 'blog[featured][]'
-								= f.hidden_field :blog_id, value: blog.id, name: 'blog[selected][]'
+								%td= check_box_tag "featured[]", blog.id, blog.featured
 								%td= blog.title
 								%td= raw blog.body[0..100]
 								%td= blog.blog_type
 								%td= blog.created_at.strftime "%D"
-			= f.submit
+			= submit_tag
 
 		%h2 - Eat Blogs
 		.header

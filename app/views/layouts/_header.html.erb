@@ -1,6 +1,9 @@
-<div class="main">
+<div class="container">
+<div class="col-sm-12">
     <div class="banner">
-        <%= image_tag 'logo.jpg', :size => '792x147'%>
+        <%= link_to root_path do %>
+            <%= image_tag 'logo.jpg', :size => '792x147'%>
+        <% end %>
     </div>
     <div class="menubar">
         <hr/><hr/>
@@ -60,4 +63,5 @@
         <% end%>
     </div>
 
+</div>
 </div>

@@ -31,6 +31,7 @@ class Blog < ActiveRecord::Base
   scope :stay, -> { where(blog_type: BLOG_STAY, category: false) }
   scope :play, -> { where(blog_type: BLOG_PLAY, category: false) }
   scope :destination, -> { where(category: true) }
+  scope :featured, -> { where(featured: true) }
 
   def self.main_blogs
   	where(blog_type: BLOG_MAIN)

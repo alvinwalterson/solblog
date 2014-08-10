@@ -1,19 +1,18 @@
-<div class="main">
+<div class="col-sm-12">
     <div class="header">
         <%= image_tag @photo, class: "blog_big_img", title: @photo %>
     </div>
     <div class="submenu">
-        <div style="float:left;width:15%;"><hr/></div>
-        <div style="float:left;width:14%;" class="submenu_title">eat</div>
-        <div style="float:left;width:14%;"><hr/></div>
-        <div style="float:left;width:14%;" class="submenu_title">play</div>
-        <div style="float:left;width:14%;"><hr/></div>
-        <div style="float:left;width:14%;" class="submenu_title">stay</div>
-        <div style="float:left;width:15%;"><hr/></div>
-        <div style="clear: both;"></div>
+        <div style="width:15%;" class="pull-left"><hr/></div>
+        <%= link_to 'eat', 'javascript:void(0)', data: {target: '#eat_blog_div'}, class: 'submenu_title pull-left' %>
+        <div style="width:14%;" class="pull-left"><hr/></div>
+        <%= link_to 'play', 'javascript:void(0)', data: {target: '#play_blog_div'}, class: 'submenu_title pull-left' %>
+        <div style="width:14%;" class="pull-left"><hr/></div>
+        <%= link_to 'stay', 'javascript:void(0)', data: {target: '#stay_blog_div'}, class: 'submenu_title pull-left' %>
+        <div style="width:15%;" class="pull-left"><hr/></div>
     </div>
 
-    <div id="eat_blog_div" class="sol_blog_section">
+    <div id="location_blog_div" class="sol_blog_section">
         <div>
             <div style="float:left;width:40%;"><hr/><hr/></div>
             <div style="float:left;width:20%;" class="sol_blog_title">STORY</div>
@@ -35,71 +34,113 @@
                 </div>
             <% end %>
         </div>
-    </div>
-    <div>
-        <div>
-            <div style="float:left;width:40%;"><hr/><hr/></div>
-            <div style="float:left;width:20%;" class="sol_blog_title">TOP 5</div>
-            <div style="float:left;width:40%;"><hr/><hr/></div>
-            <div style="clear: both;"></div>
+        <div class="">
+            <div>
+                <div style="float:left;width:40%;"><hr/><hr/></div>
+                <div style="float:left;width:20%;" class="sol_blog_title">TOP 5</div>
+                <div style="float:left;width:40%;"><hr/><hr/></div>
+                <div style="clear: both;"></div>
+
+                <% @featured_blogs.each do |blog| %>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <%= image_tag blog.picture.url %>
+                        </div>
+                        <div class="col-sm-4">
+                            <h4><%= blog.title %></h4>
+                            <p>
+                                <%= raw blog.body %>
+                            </p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        <div class="">
+            <div>
+                <div style="float:left;width:40%;"><hr/><hr/></div>
+                <div style="float:left;width:20%;" class="sol_blog_title">PHOTOS</div>
+                <div style="float:left;width:40%;"><hr/><hr/></div>
+                <div style="clear: both;"></div>
+
+                <div class="row">
+                    <% @photos.each do |photo| %>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <%= link_to photo.url do %>
+                                <%= image_tag photo.picture.url, class: "img-thumbnail" %>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>   
         </div>
     </div>
-    <div>
-        <div>
-            <div style="float:left;width:40%;"><hr/><hr/></div>
-            <div style="float:left;width:20%;" class="sol_blog_title">PHOTOS</div>
-            <div style="float:left;width:40%;"><hr/><hr/></div>
-            <div style="clear: both;"></div>
-        </div>   
-    </div>
 
-    <div id="eat_blog_div">
+
+    <div id="eat_blog_div" class="">
         <div>
             <div style="float:left;width:40%;"><hr/><hr/></div>
             <div style="float:left;width:20%;" class="sol_blog_title">EAT</div>
             <div style="float:left;width:40%;"><hr/><hr/></div>
             <div style="clear: both;"></div>
         </div>
-        <div class="travel_blog">
-            <div style="float: left; width: 60%;">
-                <%= image_tag "italian-riviera-cinque-terre.jpg", class: "blog_small_img" %>
-            </div>
-            <div class="travel_blog_content" style="width: 37%;">
-                <div class="travel_blog_title">1. Week in Paris</div>
-                <div style="text-align: left;">
-                    Sample JavaScript Menus
-                    kmserv.com/testbed/menu/menu.html
-                    Dynamic HTML Menus -- Using The JavaScript Menu Component. The purpose of this page is to provide sample menus illustrating the various ... Let's summarize the three basic steps it takes to quickly add a dynamic menu to your web page:.
-                    CSS Javascript Menu - Samples - Deluxe Menu
-                    deluxe-menu.com/css-mode-sample.html
-                    (c) 2011, Deluxe-Menu.com .... Style Sheets (CSS). View data-file of this sample · View css-file of this sample ... Simple Dark Menu. Blue-Orange Menu.
-                    Simple JavaScript Drop Down Menu with timeout effect v2.0 ...
-                    Sample JavaScript Menus
-                    kmserv.com/testbed/menu/menu.html
-                    Dynamic HTML Menus -- Using The JavaScript Menu Component. The purpose of this page is to provide sample menus illustrating the various ... Let's summarize the three basic steps it takes to quickly add a dynamic menu to your web page:.
-                    CSS Javascript Menu - Samples - Deluxe Menu
-                    deluxe-menu.com/css-mode-sample.html
-                    (c) 2011, Deluxe-Menu.com .... Style Sheets (CSS). View data-file of this sample · View css-file of this sample ... Simple Dark Menu. Blue-Orange Menu.
-                    Simple JavaScript Drop Down Menu with timeout effect v2.0 ...
+        <% @eat_blogs.each do |blog| %>
+            <div class="row">
+                <div class="col-sm-8">
+                    <%= image_tag blog.picture.url %>
+                </div>
+                <div class="col-sm-4">
+                    <h4><%= blog.title %></h4>
+                    <p>
+                        <%= raw blog.body %>
+                    </p>
                 </div>
             </div>
-        </div>
-        <hr/>
-        <div class="travel_blog">
-            <div style="float: left; width: 60%;">
-                <%= image_tag "italian-riviera-cinque-terre.jpg", class: "blog_small_img" %>
-            </div>
-            <div class="travel_blog_content" style="width: 37%;">
-                <div class="travel_blog_title">1. Week in Paris</div>
-                <div style="text-align: left;">
-                    Sample JavaScript Menus
-                    kmserv.com/testbed/menu/menu.html
-                    Dynamic HTML Menus -- Using The JavaScript Menu Component. The purpose of this page is to provide sample menus illustrating the various ... Let's summarize the three basic steps it takes to quickly add a dynamic menu to your web page:.
-                    CSS Javascript Menu - Samples - Deluxe Menu
-                    deluxe-menu.com/css-mode-sample.html
-                </div>
-            </div>
-        </div>
-        <hr />
+        <% end %>
     </div>
+
+    <div id="play_blog_div" class="">
+        <div>
+            <div style="float:left;width:40%;"><hr/><hr/></div>
+            <div style="float:left;width:20%;" class="sol_blog_title">PLAY</div>
+            <div style="float:left;width:40%;"><hr/><hr/></div>
+            <div style="clear: both;"></div>
+        </div>
+        <% @play_blogs.each do |blog| %>
+            <div class="row">
+                <div class="col-sm-8">
+                    <%= image_tag blog.picture.url %>
+                </div>
+                <div class="col-sm-4">
+                    <h4><%= blog.title %></h4>
+                    <p>
+                        <%= raw blog.body %>
+                    </p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+    <div id="stay_blog_div" class="">
+        <div>
+            <div style="float:left;width:40%;"><hr/><hr/></div>
+            <div style="float:left;width:20%;" class="sol_blog_title">STAY</div>
+            <div style="float:left;width:40%;"><hr/><hr/></div>
+            <div style="clear: both;"></div>
+        </div>
+        <% @stay_blogs.each do |blog| %>
+            <div class="row">
+                <div class="col-sm-8">
+                    <%= image_tag blog.picture.url %>
+                </div>
+                <div class="col-sm-4">
+                    <h4><%= blog.title %></h4>
+                    <p>
+                        <%= raw blog.body %>
+                    </p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    
 </div>
