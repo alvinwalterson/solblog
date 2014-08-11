@@ -13,9 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+    font-family: 'Florencesans';
+    src: font-url('Florsn01.ttf') format('truetype');
+    font-weight: normal;  
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'Otto';
+    src: font-url('Otto.ttf') format('truetype');
+    font-weight: normal;  
+    font-style: normal; 
+}
+
 body {
     background-color: rgb(255, 255, 255);
-    font: 10pt Florencesans;
+    font-family: 'Florencesans';
+    font-size: 10pt;
     color : rgb(60, 60, 60)
 }
 
@@ -67,7 +83,8 @@ body {
     padding: 0;
     list-style: none;
     float: left;
-    font: 12pt Florencesans;
+    font-family: 'Florencesans';
+    font-size: 12pt;
 }
 
 #menu li a {
@@ -78,7 +95,8 @@ body {
     color: rgb(150, 150, 150);
     text-align: center;
     text-decoration: none;
-    font: 12pt Florencesans;
+    font-family: 'Florencesans';
+    font-size: 12pt;
 }
 
 #menu li.menu_dot {
@@ -89,7 +107,9 @@ body {
     color: rgb(244, 173, 112);
     text-align: center;
     text-decoration: none;
-    font: bold 12pt Florencesans;
+    font-style: bold;
+    font-size: 12pt;
+    font-family: 'Florencesans';
 }
 
 #menu li a.short_title {
@@ -121,7 +141,8 @@ body {
     text-align: left;
     text-decoration: none;
     background: #FFF;
-    font: 12pt Florencesans;
+    font-size: 12pt;
+    font-family: 'Florencesans';
     color : rgb(244, 173, 112)
 }
 
@@ -171,9 +192,8 @@ body {
 .about_image {
 }
 
-.about_quote {
+div.quote {
     padding: 50px 0px 0px 0px;
-    font-size: 17pt;
 }
 
 div.about_content {
@@ -189,7 +209,7 @@ div.about_content {
 
 .sol_blog_section {
     text-align: center;
-    padding-top: 30px;
+    padding: 20px 0px 10px 0px;
 }
 
 .sol_blog div.sol_blog_section hr {
@@ -209,7 +229,7 @@ div.about_content {
     margin: 0;
     padding: 0;
     text-align: center;
-    font-size: 18pt;
+    font-size: 15pt;
 }
 
 .instagram {
@@ -217,7 +237,8 @@ div.about_content {
 }
 
 .blog_title {
-    font : 50pt Otto;
+    font-family: 'Otto';
+    font-size : 50pt;
 }
 
 div.blog_content {
@@ -245,10 +266,18 @@ div.submenu {
 
 .submenu_title {
     color : rgb(136, 136, 136);
-    font : 40pt Otto     
+    font-family: 'Otto';
+    font-size:  40pt;
+    width: 14%;     
+    text-align: center;
 }
 
-div.submenu div hr {
+.submenu_title:hover, .submenu_title:focus {
+    color: rgb(248, 200, 159);
+    text-decoration: none;
+}
+
+div.submenu hr {
     margin: 25px 0px;
 }
 
@@ -277,4 +306,19 @@ div.travel_blog_title {
 
 .blog_edit_line {
     padding: 10px
+}
+
+.quote_text {
+    display: inline-block; 
+    vertical-align: middle; 
+    height: 90px;
+    font-size: 17pt;
+}
+
+#blog_edit_table td {
+    vertical-align: middle;
+}
+
+td img {
+    margin: 0px;
 }

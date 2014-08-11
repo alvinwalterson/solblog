@@ -5,6 +5,7 @@
 img {
   @extend .img-responsive;
   margin: 0 auto;
+  max-width: 100%;
   }
 // override for the 'Home' navigation link
 .navbar-brand {
@@ -82,6 +83,9 @@ section {
 
 hr {
   margin: 7px 0px;
+  height: 2px;
+  border: 0px;
+  background-color: #b0b0b1;
 }
 
 .container {
@@ -97,5 +101,29 @@ hr {
 @media (max-width: 768px) {
   .sol_blog_title {
     font-size: 15pt !important;
+  }
+
+  .blog_title {
+    font-size: 25pt !important;
+  }
+
+  .sol_blog_rising {
+    font-size: 15pt !important;
+  }
+
+  .quote_font {
+    font-size: 25pt !important;
+  }
+
+  .quote_text {
+    font-size: 13pt !important;
+    height: 50px !important;
+  }
+
+  .submenu_title {
+    font-size: 15pt !important;
+  }
+
+  div.submenu hr {
   }
 }

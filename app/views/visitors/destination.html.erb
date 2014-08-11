@@ -3,7 +3,7 @@
         <%= image_tag @photo, class: "blog_big_img", title: @photo %>
     </div>
     <div class="submenu">
-        <div style="width:15%;" class="pull-left"><hr/></div>
+        <div style="width:15%" class="pull-left"><hr/></div>
         <%= link_to 'eat', 'javascript:void(0)', data: {target: '#eat_blog_div'}, class: 'submenu_title pull-left' %>
         <div style="width:14%;" class="pull-left"><hr/></div>
         <%= link_to 'play', 'javascript:void(0)', data: {target: '#play_blog_div'}, class: 'submenu_title pull-left' %>
@@ -12,11 +12,11 @@
         <div style="width:15%;" class="pull-left"><hr/></div>
     </div>
 
-    <div id="location_blog_div" class="sol_blog_section">
-        <div>
-            <div style="float:left;width:40%;"><hr/><hr/></div>
-            <div style="float:left;width:20%;" class="sol_blog_title">STORY</div>
-            <div style="float:left;width:40%;"><hr/><hr/></div>
+    <div id="location_blog_div">
+        <div class="sol_blog_section">
+            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+            <div class="pull-left sol_blog_title" style="width:20%">STORY</div>
+            <div class="pull-left" style="width:40%"><hr/><hr/></div>
             <div style="clear: both;"></div>
         </div>
         <br />
@@ -34,51 +34,51 @@
                 </div>
             <% end %>
         </div>
-        <div class="">
-            <div>
+        <div>
+            <div class="sol_blog_section">
                 <div style="float:left;width:40%;"><hr/><hr/></div>
                 <div style="float:left;width:20%;" class="sol_blog_title">TOP 5</div>
                 <div style="float:left;width:40%;"><hr/><hr/></div>
                 <div style="clear: both;"></div>
+            </div>
 
-                <% @featured_blogs.each do |blog| %>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <%= image_tag blog.picture.url %>
-                        </div>
-                        <div class="col-sm-4">
-                            <h4><%= blog.title %></h4>
-                            <p>
-                                <%= raw blog.body %>
-                            </p>
-                        </div>
+            <% @featured_blogs.each do |blog| %>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <%= image_tag blog.picture.url %>
+                    </div>
+                    <div class="col-sm-4">
+                        <h4><%= blog.title %></h4>
+                        <p>
+                            <%= raw blog.body %>
+                        </p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <div>
+            <div class="sol_blog_section">
+                <div style="float:left;width:35%;"><hr/><hr/></div>
+                <div style="float:left;width:30%;" class="sol_blog_title">PHOTOS</div>
+                <div style="float:left;width:35%;"><hr/><hr/></div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <div class="row">
+                <% @photos.each do |photo| %>
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+                        <%= link_to photo.url do %>
+                            <%= image_tag photo.picture.url, class: "img-thumbnail" %>
+                        <% end %>
                     </div>
                 <% end %>
             </div>
         </div>
-        <div class="">
-            <div>
-                <div style="float:left;width:40%;"><hr/><hr/></div>
-                <div style="float:left;width:20%;" class="sol_blog_title">PHOTOS</div>
-                <div style="float:left;width:40%;"><hr/><hr/></div>
-                <div style="clear: both;"></div>
-
-                <div class="row">
-                    <% @photos.each do |photo| %>
-                        <div class="col-md-3 col-sm-4 col-xs-6">
-                            <%= link_to photo.url do %>
-                                <%= image_tag photo.picture.url, class: "img-thumbnail" %>
-                            <% end %>
-                        </div>
-                    <% end %>
-                </div>
-            </div>   
-        </div>
     </div>
 
 
-    <div id="eat_blog_div" class="">
-        <div>
+    <div id="eat_blog_div">
+        <div class="sol_blog_section">
             <div style="float:left;width:40%;"><hr/><hr/></div>
             <div style="float:left;width:20%;" class="sol_blog_title">EAT</div>
             <div style="float:left;width:40%;"><hr/><hr/></div>
@@ -99,8 +99,8 @@
         <% end %>
     </div>
 
-    <div id="play_blog_div" class="">
-        <div>
+    <div id="play_blog_div">
+        <div class="sol_blog_section">
             <div style="float:left;width:40%;"><hr/><hr/></div>
             <div style="float:left;width:20%;" class="sol_blog_title">PLAY</div>
             <div style="float:left;width:40%;"><hr/><hr/></div>
@@ -121,8 +121,8 @@
         <% end %>
     </div>
 
-    <div id="stay_blog_div" class="">
-        <div>
+    <div id="stay_blog_div">
+        <div class="sol_blog_section">
             <div style="float:left;width:40%;"><hr/><hr/></div>
             <div style="float:left;width:20%;" class="sol_blog_title">STAY</div>
             <div style="float:left;width:40%;"><hr/><hr/></div>

@@ -1,8 +1,9 @@
-.gv_frame .gv_caption {
+div.gv_frame .gv_caption {
     position: absolute;
-    top: 34px;
-    left: 17px;
-    font: 22pt Otto;
+    top: 60px;
+    left: 5px;
+    font-size: 40pt;
+    font-family:  'Otto';
     line-height: 20px;
 }
 

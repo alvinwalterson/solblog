@@ -20,4 +20,17 @@ $(document).ready(function() {
 		$target.show();
 		return false;
 	});
+
+	$("#banner_img").on('mouseenter', function () {
+	  $(this).fadeTo('slow', 0.5);
+	});
+
+	$("#banner_img").on('mouseleave', function () {
+	  $(this).fadeTo('slow', 1);
+	});
+
+	$('.bxslider').bxSlider({
+	  mode: 'fade',
+	  captions: true
+	});
 });
