@@ -15,10 +15,17 @@ div.gv_galleryWrap {
     background-color: transparent;
 }
 
-.gv_panelWrap {
+.border10 {
     border: 10px solid rgb(244, 173, 112);
 }
 
 .gv_galleryWrap {
     margin: 0 auto;
+}
+
+.bxslider {
+	padding-left: 0;
+}
+.bx-wrapper .bx-next {
+	right: 20px !important;
 }

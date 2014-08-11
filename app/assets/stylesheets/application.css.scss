@@ -102,7 +102,7 @@ body {
 #menu li.menu_dot {
     display: block;
     margin: 0 1px 0 0;
-    padding: 4px 0px;
+    padding: 2px 0px;
     width: 40px;
     color: rgb(244, 173, 112);
     text-align: center;
@@ -239,6 +239,7 @@ div.about_content {
 .blog_title {
     font-family: 'Otto';
     font-size : 50pt;
+    text-align: center;
 }
 
 div.blog_content {
@@ -278,7 +279,7 @@ div.submenu {
 }
 
 div.submenu hr {
-    margin: 25px 0px;
+    margin: 35px 0px;
 }
 
 div.travel_blog {

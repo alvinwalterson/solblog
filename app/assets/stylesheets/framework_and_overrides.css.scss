@@ -100,11 +100,12 @@ hr {
 
 @media (max-width: 768px) {
   .sol_blog_title {
-    font-size: 15pt !important;
+    font-size: 10pt !important;
   }
 
   .blog_title {
     font-size: 25pt !important;
+    text-align: center;
   }
 
   .sol_blog_rising {
@@ -121,9 +122,18 @@ hr {
   }
 
   .submenu_title {
-    font-size: 15pt !important;
+    font-size: 30pt !important;
   }
 
   div.submenu hr {
+    margin: 28px 0px !important;
   }
+
+  hr {
+    margin: 3px 0px !important;
+  }
+}
+
+h4 {
+  text-align: center;
 }

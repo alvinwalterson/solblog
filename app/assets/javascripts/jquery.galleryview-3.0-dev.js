@@ -241,6 +241,7 @@ if (typeof Object.create !== 'function') {
 				width: this.opts.panel_width,
 				height: this.opts.panel_height
 			});
+
 			dom.gv_panelWrap.css({
 				width: gv.outerWidth(dom.gv_panel),	// Considering border
 				height: gv.outerHeight(dom.gv_panel) // Considering border
@@ -318,6 +319,8 @@ if (typeof Object.create !== 'function') {
 					height: gv.outerHeight(dom.gv_gallery),
 					padding: this.opts.frame_gap
 			});
+
+			dom.gv_panelWrap.addClass("border10");
 		},
 		
 		setPositions: function() {
