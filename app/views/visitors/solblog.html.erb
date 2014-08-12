@@ -1,12 +1,13 @@
 <div class="main">
-    <h1>SOL BLOG</h1>
+    <h2>SOL BLOG</h2>
     <% unless @main_blog.nil? %>
         <div class="blog_section">
+            <div class="blog_title">
+                <span><%= @main_blog.title %></span>
+                <span><%=  @main_blog.created_at.strftime "%D" %></span>
+            </div>
             <div>
                 <%= image_tag @main_blog.picture.url, class: "" %>
-            </div>
-            <div class="blog_title">
-                <%=  @main_blog.created_at.strftime "%D" + "  -  " + @main_blog.title %>
             </div>
             <div class="blog_content"><%= raw @main_blog.body %></div>
         </div>
@@ -14,11 +15,12 @@
     <hr />
     <% unless @old_blog.nil? %>
         <div class="blog_section">
+            <div class="blog_title">
+                <%=  @old_blog.created_at.strftime "%D" %>
+                <%= @old_blog.title %>
+            </div>
             <div>
                 <%= image_tag @old_blog.picture.url, class: "" %>
-            </div>
-            <div class="blog_title">
-                <%=  @old_blog.created_at.strftime "%D" + "  -  " + @old_blog.title %>
             </div>
             <div class="blog_content"><%= raw @old_blog.body %></div>
         </div>

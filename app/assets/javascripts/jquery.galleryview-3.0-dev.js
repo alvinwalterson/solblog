@@ -377,7 +377,7 @@ if (typeof Object.create !== 'function') {
 					dom.gv_navWrap.css({ bottom: navVert, right: navHorz });
                     dom.gv_navWrapPrev.css({ bottom: navVert, left: 0 });
 					dom.gv_panelWrap.css({ top: 0, left: 0 });
-					dom.gv_filmstripWrap.css({ bottom: fsVert, left: fsHorz });
+					dom.gv_filmstripWrap.css({ bottom: fsVert, left: fsHorz-5 });
 					break;
 			}
 			

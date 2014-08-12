@@ -18,9 +18,9 @@
 <div class="col-sm-12">
     <div class="sol_blog_section">
         <div>
-            <div class="pull-left" style="width:35%;"><hr/><hr/></div>
-            <div class="pull-left" style="width:30%;"><h2 class="sol_blog_tltle">SOL BLOG</h2></div>
-            <div class="pull-left" style="width:35%;"><hr/><hr/></div>
+            <div class="pull-left hr_div" style="width:35%;"><hr/><hr/></div>
+            <div class="pull-left" style="width:30%;"><h2>SOL BLOG</h2></div>
+            <div class="pull-left hr_div" style="width:35%;"><hr/><hr/></div>
             <div style="clear: both;"></div>
         </div>
         <br />
@@ -30,7 +30,6 @@
                 <div>
                     <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>
                 </div>
-                <br />
                 <div class="blog_title">
                     <%= @main_blog.title %>
                 </div>
@@ -42,11 +41,12 @@
     </div>
     <div>
         <div class="sol_blog_section">
-            <div class="pull-left" style="width:35%;"><hr/><hr/></div>
+            <div class="pull-left hr_div" style="width:35%;"><hr/><hr/></div>
             <div class="pull-left" style="width:30%;"><h2>INSTAGRAMM</h2></div>
-            <div class="pull-left" style="width:35%;"><hr/><hr/></div>
+            <div class="pull-left hr_div" style="width:35%;"><hr/><hr/></div>
             <div class="pull-left" style="clear: both;"></div>
         </div>
+        <br />
         <div id="wrapper">
             <div id="instafeed"></div>
         </div>

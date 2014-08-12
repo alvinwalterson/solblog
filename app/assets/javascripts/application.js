@@ -21,6 +21,7 @@
   var feed = new Instafeed({
         get: 'tagged',      
         tagName: 'messi',   // Replace with Sol Blog tag
+        limit: 12, 
         clientId: 'c949d548ff5a48a2b10b31e660db9fb7'  // Client ID from Instagram
   });
   feed.run();
