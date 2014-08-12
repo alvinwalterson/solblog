@@ -7,7 +7,7 @@
 			- if @type == Blog::BLOG_MYSOL && @blogs.count != 0
 				= link_to 'Edit MySol', edit_blog_path(@blogs.first, type: Blog::BLOG_MYSOL)
 			- else
-				= link_to 'Add new blog', new_blog_path(type: Blog::BLOG_MAIN)
+				= link_to 'Add new blog', new_blog_path(type: @type)
 		%div
 		%br
 		%br

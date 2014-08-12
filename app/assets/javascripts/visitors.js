@@ -1,23 +1,27 @@
-var update_status = function() {
-  var $controller = $("#control-bar");
-  var count = $controller.data('total');
-  var current = $controller.data('current') + 1;
-
-  $("#featured-status").html(current.toString() + " / " + count.toString())
-};
-
-var show_current = function(current) {
-  $(".featured_image").removeClass("show").addClass("hidden");
-  $(".featured_blog").removeClass("show").addClass("hidden");
-
-  $("#featured-img-" + current.toString()).removeClass("hidden").addClass("show");
-  $("#featured-blog-" + current.toString()).removeClass("hidden").addClass("show");
-};
-
 $(document).ready(function() {
 
   // To navigate between eat/play/stay section
   $("#location_blog_div").show();
+
+  var update_status = function() {
+    var $controller = $("#control-bar");
+    var count = $controller.data('total');
+    var current = $controller.data('current') + 1;
+
+    if (current && count) {
+      $("#featured-status").html(current.toString() + " / " + count.toString())
+    }
+  };
+
+  var show_current = function(current) {
+    if (current && count) {
+      $(".featured_image").removeClass("show").addClass("hidden");
+      $(".featured_blog").removeClass("show").addClass("hidden");
+
+      $("#featured-img-" + current.toString()).removeClass("hidden").addClass("show");
+      $("#featured-blog-" + current.toString()).removeClass("hidden").addClass("show");
+    }
+  };
 
   update_status();
 
