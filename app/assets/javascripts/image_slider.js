@@ -24,8 +24,8 @@ $(function(){
 		start_frame: 1, 				//INT - index of panel/frame to show first when gallery loads
 		show_filmstrip: true, 			//BOOLEAN - flag to show or hide filmstrip portion of gallery
 		show_filmstrip_nav: true, 		//BOOLEAN - flag indicating whether to display navigation buttons
-		enable_slideshow: false,			//BOOLEAN - flag indicating whether to display slideshow play/pause button
-		autoplay: false,				//BOOLEAN - flag to start slideshow on gallery load
+		enable_slideshow: true,			//BOOLEAN - flag indicating whether to display slideshow play/pause button
+		autoplay: true,				//BOOLEAN - flag to start slideshow on gallery load
 		show_captions: true, 			//BOOLEAN - flag to show or hide frame captions	
 		filmstrip_size: 3, 				//INT - number of frames to show in filmstrip-only gallery
 		filmstrip_style: 'scroll', 		//STRING - type of filmstrip to use (scroll = display one line of frames, scroll filmstrip if necessary, showall = display multiple rows of frames if necessary)

@@ -4,7 +4,7 @@
 			= render 'layouts/messages'
 	- if @name.nil?
 		.header
-			- if @type == Blog::BLOG_MYSOL && !@blogs.nil?
+			- if @type == Blog::BLOG_MYSOL && @blogs.count != 0
 				= link_to 'Edit MySol', edit_blog_path(@blogs.first, type: Blog::BLOG_MYSOL)
 			- else
 				= link_to 'Add new blog', new_blog_path(type: Blog::BLOG_MAIN)
@@ -29,7 +29,7 @@
 								%td
 									= link_to 'Edit', edit_blog_path(blog, type: @type)
 									- if @type == Blog::BLOG_MYSOL
-										= link_to 'Show', mysol_path
+										= link_to 'Show', mysol_path, class: "btn btn-primary"
 									- else
 										= link_to 'Show', blog_path(blog, type: @type)
 									- unless @type == Blog::BLOG_MYSOL
@@ -94,7 +94,7 @@
 
 		%h2 - Blogs for Eat
 		.header
-			= link_to 'Add New Blog', new_blog_path(type: Blog::BLOG_EAT, name: @name, category: false)
+			= link_to 'Add New Blog', new_blog_path(type: Blog::BLOG_EAT, name: @name, category: false), class: "btn btn-success pull-right"
 		%table#blog_edit_table.table{:align=> 'center'}
 			%thead
 				%td{:width=>100} Title

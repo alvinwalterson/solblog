@@ -7,7 +7,7 @@ class VisitorsController < ApplicationController
 	end
 
 	def solblog
-		@old_blog, @main_blog = Blog.main_blogs.limit 2
+		@main_blog, @old_blog = Blog.main_blogs.limit 2
 	end
 
 	def mysol
@@ -26,10 +26,6 @@ class VisitorsController < ApplicationController
 	end
 
 	def travel
-		@location = Location.includes(:blogs).includes(:photos).find_by_name params[:name]
-		@eat_blogs = @location.blogs.travel.eat
-		@stay_blogs = @location.blogs.travel.stay
-		@play_blogs = @location.blogs.travel.play
 	end
 
 end
