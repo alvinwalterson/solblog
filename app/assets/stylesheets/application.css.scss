@@ -63,7 +63,7 @@ hr.large_margin {
 }
 
 .banner_img {
-    max-width: 650px;
+    max-width: 90%px;
 }
 
 .menubar {
@@ -301,6 +301,7 @@ div.travel_blog_title {
 
 #blog_edit_table td {
     vertical-align: middle;
+    word-wrap: break-word;
 }
 
 td img {

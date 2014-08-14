@@ -41,7 +41,7 @@
 									here.
 	- else
 		%h2 Main Blogs
-		.header
+		%div
 			= link_to 'Add New Blog', new_blog_path(type: @type, name: @name, category: true), class: "pull-left btn btn-success"
 		%table#blog_edit_table.table{:align=> 'center'}
 			%thead
@@ -97,7 +97,7 @@
 		%br	
 		%h2 Blogs for Eat
 		%br
-		.header
+		%div
 			= link_to 'Add New Blog', new_blog_path(type: Blog::BLOG_EAT, name: @name, category: false), class: "btn btn-success pull-left"
 		%table#blog_edit_table.table{:align=> 'center'}
 			%thead
@@ -129,7 +129,7 @@
 		%br
 		%br
 		%h2 Blogs for Stay
-		.header
+		%div
 			= link_to 'Add New Blog', new_blog_path(type: Blog::BLOG_STAY, name: @name, category: false), class: "btn btn-success pull-left"
 		%table#blog_edit_table.table{:align=> 'center'}
 			%thead
@@ -161,7 +161,7 @@
 		%br
 		%br
 		%h2 Blogs for Play
-		.header
+		%div
 			= link_to 'Add New Blog', new_blog_path(type: Blog::BLOG_PLAY, name: @name, category: false), class: "btn btn-success pull-left"
 		%table#blog_edit_table.table{:align=> 'center'}
 			%thead

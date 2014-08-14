@@ -3,7 +3,7 @@ class VisitorsController < ApplicationController
 	before_filter :get_locations
 
 	def home
-		@main_blog = Blog.main_blogs.first
+		@main_blog = Blog.latest_blog
 	end
 
 	def solblog

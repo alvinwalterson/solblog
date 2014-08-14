@@ -37,6 +37,10 @@ class Blog < ActiveRecord::Base
   	where(blog_type: BLOG_MAIN)
   end
 
+  def self.latest_blog
+  	where('blog_type = ? ', BLOG_MAIN).first
+  end
+
   def self.my_sol_blogs
   	where(blog_type: BLOG_MYSOL)
   end

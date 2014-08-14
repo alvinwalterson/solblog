@@ -14,7 +14,7 @@ $(document).ready(function() {
   };
 
   var show_current = function(current) {
-    if (current) {
+    if (current == 0 || current) {
       $(".featured_image").removeClass("show").addClass("hidden");
       $(".featured_blog").removeClass("show").addClass("hidden");
 
