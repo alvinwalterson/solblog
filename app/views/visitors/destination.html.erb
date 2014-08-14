@@ -1,10 +1,11 @@
 <div class="col-sm-12">
     <div class="header">
-        <%= image_tag @photo, class: "blog_big_img", title: @photo %>
+        <div class='title'><%= params[:name] %></div>
+        <%= image_tag @photo, id:"dest_blog_img", class: "blog_big_img", title: @photo %>
     </div>
     <div class="submenu">
         <div style="width:15%" class="pull-left"><hr/></div>
-        <%= link_to 'eat', 'javascript:void(0)', data: {target: '#eat_blog_div'}, class: 'submenu_title pull-left' %>
+        <%= link_to 'eat', 'javascript:void(0)', data: {target: '#eat_blog_div'}, class: "submenu_title pull-left" %>
         <div style="width:14%;" class="pull-left"><hr/></div>
         <%= link_to 'play', 'javascript:void(0)', data: {target: '#play_blog_div'}, class: 'submenu_title pull-left' %>
         <div style="width:14%;" class="pull-left"><hr/></div>
@@ -14,9 +15,9 @@
 
     <div id="location_blog_div">
         <div class="sol_blog_section">
-            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+            <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div class="pull-left" style="width:20%"><h2>STORY</h2></div>
-            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+            <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div style="clear: both;"></div>
         </div>
         <br />
@@ -34,25 +35,29 @@
             <% end %>
         </div>
         <div>
-            <div class="sol_blog_section">
-                <div class="pull-left" style="width:40%"><hr/><hr/></div>
+            <div class="blog_line_bar">
+                <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
                 <div class="pull-left" style="width:20%"><h2>TOP <%= @featured_blogs.count   %></h2></div>
-                <div class="pull-left" style="width:40%"><hr/><hr/></div>
+                <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
                 <div style="clear: both;"></div>
             </div>
 
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-8 col-xs-12">
                     <% @featured_blogs.each_with_index do |blog, index| %>
                         <%= image_tag blog.picture.url, id: "featured-img-#{index}", class: "#{index == 0 ? 'show' : 'hidden'} featured_image" %>
                     <% end %>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4 col-xs-12">
                     <div class="row">
-                        <div class="col-sm-12" data-current="0" data-total="<%= @featured_blogs.count %>" id="control-bar">
-                            <%= image_tag '/assets/themes/light/panel-prev-big.png', class: 'pull-left', id: "featured-left"%>
-                            <div id="featured-status" class="pull-left"></div>
-                            <%= image_tag '/assets/themes/light/panel-next-big.png', class: 'pull-right', id: "featured-right"%>
+                        <div class="col-sm-12 col-xs-12" data-current="0" data-total="<%= @featured_blogs.count %>" id="control-bar">
+                            <div class="col-sm-4 col-xs-4 pull-left">
+                                <%= image_tag '/assets/themes/light/panel-prev-big.png', class: 'blog_nav_img', id: "featured-left"%>
+                            </div>
+                            <div id="featured-status" class="col-sm-4 col-xs-4 pull-left"></div>
+                            <div class="col-sm-4 col-xs-4 pull-left">
+                                <%= image_tag '/assets/themes/light/panel-next-big.png', class: 'blog_nav_img', id: "featured-right"%>
+                            </div>
                         </div>
                     </div>
                     <% @featured_blogs.each_with_index do |blog, index| %>
@@ -64,17 +69,17 @@
             </div>
         </div>
         <div>
-            <div class="sol_blog_section">
-                <div class="pull-left" style="width:40%"><hr/><hr/></div>
+            <div class="blog_line_bar">
+                <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
                 <div class="pull-left" style="width:20%"><h2>PHOTOS</h2></div>
-                <div class="pull-left" style="width:40%"><hr/><hr/></div>
+                <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
                 <div style="clear: both;"></div>
             </div>
 
             <div class="row">
                 <% @photos.each do |photo| %>
-                    <div class="col-md-3 col-sm-4 col-xs-6">
-                        <%= link_to photo.url do %>
+                    <div id="photo_viewer" class="col-xs-6 col-sm-4 col-md-3">
+                        <%= link_to photo.picture.url do %>
                             <%= image_tag photo.picture.url, class: "img-thumbnail" %>
                         <% end %>
                     </div>
@@ -85,10 +90,10 @@
 
 
     <div id="eat_blog_div">
-        <div class="sol_blog_section">
-            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+        <div class="blog_line_bar">
+            <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div class="pull-left" style="width:20%"><h2>EAT</h2></div>
-            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+            <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div style="clear: both;"></div>
         </div>
         <% @eat_blogs.each do |blog| %>
@@ -102,15 +107,17 @@
                         <%= raw blog.body %>
                     </p>
                 </div>
+                                
             </div>
+            <hr class="clearfix large_margin" />
         <% end %>
     </div>
 
     <div id="play_blog_div">
-        <div class="sol_blog_section">
-            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+        <div class="blog_line_bar">
+            <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div class="pull-left" style="width:20%"><h2>PLAY</h2></div>
-            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+            <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div style="clear: both;"></div>
         </div>
         <% @play_blogs.each do |blog| %>
@@ -125,14 +132,15 @@
                     </p>
                 </div>
             </div>
+            <hr class="large_margin" />
         <% end %>
     </div>
 
     <div id="stay_blog_div">
-        <div class="sol_blog_section">
-            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+        <div class="blog_line_bar">
+            <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div class="pull-left" style="width:20%"><h2>STAY</h2></div>
-            <div class="pull-left" style="width:40%"><hr/><hr/></div>
+            <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div style="clear: both;"></div>
         </div>
         <% @stay_blogs.each do |blog| %>
@@ -147,6 +155,7 @@
                     </p>
                 </div>
             </div>
+            <hr class="large_margin" />
         <% end %>
     </div>
     

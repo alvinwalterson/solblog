@@ -13,12 +13,12 @@
                     <% if user_signed_in? %>
                         <%= link_to "SOL BLOG", blogs_path(type: Blog::BLOG_MAIN) %>
                     <% else %>
-                        <%= link_to "SOL BLOG", solblog_path %>
+                        <%= link_to "SOL BLOG", solblog_path, class: "#{header_selected 'solblog'}" %>
                     <% end %>
                 </li>
                 <li class="menu_dot">&bull;</li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle <%= header_selected 'destination' %>" data-toggle="dropdown" href="#"  >
                         DESTINATION<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
@@ -38,12 +38,12 @@
                     <% if user_signed_in? %>
                         <%= link_to "MY SOL", blogs_path(type: Blog::BLOG_MYSOL) %>
                     <% else %>
-                        <%= link_to "MY SOL", mysol_path, class: "short_title" %>
+                        <%= link_to "MY SOL", mysol_path, class: "short_title #{header_selected 'mysol'}" %>
                     <% end %>
                 </li>
                 <li class="menu_dot">&bull;</li>
                 <li>
-                    <%= link_to "TRAVEL CONSULTANT", travel_path, class: "long_title" %>
+                    <%= link_to "TRAVEL CONSULTANT", travel_path, class: "long_title #{header_selected 'travel'}" %>
                 </li>
             </ul>
         </div>

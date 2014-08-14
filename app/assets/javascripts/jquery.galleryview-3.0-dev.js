@@ -23,6 +23,7 @@ if (typeof Object.create !== 'function') {
 
 		this.src = { 
 			panel: img.attr('src'),
+			target: img.attr('data-target'),
 			frame: img.data('frame') || img.attr('src')
 		};
 		this.scale = {
@@ -35,6 +36,7 @@ if (typeof Object.create !== 'function') {
 			title: img.attr('title') || img.attr('alt'),
 			description: img.data('description')
 		};
+
 		this.href = null;
 		this.dom_obj = null;
 		
@@ -294,23 +296,25 @@ if (typeof Object.create !== 'function') {
 				height: heights.filmstrip
 			});
 			
+			var gap = 20;
+
 			// gallery
 			if(this.opts.show_filmstrip) {
 				if(this.filmstripOrientation === 'horizontal') {
 					dom.gv_gallery.css({
 						width: gv.outerWidth(dom.gv_panelWrap),
-						height: gv.outerHeight(dom.gv_panelWrap) + this.opts.frame_gap + (this.opts.show_filmstrip ? Math.max(gv.outerHeight(dom.gv_filmstripWrap),gv.outerHeight(dom.gv_navWrap)) : gv.outerHeight(dom.gv_filmstripWrap))
+						height: gv.outerHeight(dom.gv_panelWrap) + gap + this.opts.frame_gap + (this.opts.show_filmstrip ? Math.max(gv.outerHeight(dom.gv_filmstripWrap),gv.outerHeight(dom.gv_navWrap)) : gv.outerHeight(dom.gv_filmstripWrap))
 					});
 				} else {
 					dom.gv_gallery.css({
 						width: gv.outerWidth(dom.gv_panelWrap) + this.opts.frame_gap + (this.opts.show_filmstrip ? Math.max(gv.outerWidth(dom.gv_filmstripWrap),gv.outerWidth(dom.gv_navWrap)) : gv.outerWidth(dom.gv_filmstripWrap)),
-						height: gv.outerHeight(dom.gv_panelWrap)
+						height: gv.outerHeight(dom.gv_panelWrap) + gap
 					});	
 				}
 			} else {
 				dom.gv_gallery.css({
 					width: gv.outerWidth(dom.gv_panelWrap),
-					height: gv.outerHeight(dom.gv_panelWrap)
+					height: gv.outerHeight(dom.gv_panelWrap) + gap
 				});	
 			}
 			
@@ -507,7 +511,7 @@ if (typeof Object.create !== 'function') {
 					
 					widthOffset = Math.round((gv.innerWidth(parent) - (width * gvImage.scale[parentType])) / 2);
 					heightOffset = Math.round((gv.innerHeight(parent) - (height * gvImage.scale[parentType])) / 2);	
-					
+
 					_img.css({
 						width: gv.innerWidth(parent),
 						height: gv.innerHeight(parent),
@@ -545,18 +549,21 @@ if (typeof Object.create !== 'function') {
 					img.clone(true)
 						.data('parent',{type:'gv_thumbnails',index:i})
 						.appendTo(dom.gv_imageStore)
-						.attr('src',gvImage.src.frame);
+						.attr('src',gvImage.src.frame)
+						.attr('target', gvImage.src.target);
 					
 					if(dom.gv_frames.length > dom.gv_panels.length) {
 						img.clone(true)
 							.data('parent',{type:'gv_thumbnails',index:i+self.numImages})
 							.appendTo(dom.gv_imageStore)
-							.attr('src',gvImage.src.frame);
+							.attr('src',gvImage.src.frame)
+							.attr('target', gvImage.src.target);
 							
 						img.clone(true)
 							.data('parent',{type:'gv_thumbnails',index:i+self.numImages+self.numImages})
 							.appendTo(dom.gv_imageStore)
-							.attr('src',gvImage.src.frame);
+							.attr('src',gvImage.src.frame)
+							.attr('target', gvImage.src.target);
 					}
 				}
 			});

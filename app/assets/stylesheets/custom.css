@@ -2,8 +2,9 @@ div.gv_frame .gv_caption {
     position: absolute;
     top: 65px;
     left: 5px;
-    font-size: 50pt;
+    font-size: 53pt;
     font-family:  'Otto';
+    width: 96%;
 }
 
 .gv_frame {

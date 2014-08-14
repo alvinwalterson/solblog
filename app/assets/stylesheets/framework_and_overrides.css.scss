@@ -85,24 +85,71 @@ section {
   width: 792px;
 }
 
-@media (max-width: 800px) {
-  .container {
-    width: 100%;
+@media (max-width: 370px) {
+  .header {
+    height:70px !important;
+    .title {
+        font-size: 100px !important;
+        line-height: 100px !important;
+    }
+    img {
+        position: absolute;
+        top: -50%;
+    }
+  }
+}
+
+
+@media (max-width: 640px) {
+  .header {
+    height:100px !important;
+    .title {
+        font-size: 100px !important;
+        line-height: 100px !important;
+    }
+    img {
+        position: absolute;
+        top: -50%;
+    }
   }
 }
 
 @media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .header {
+    height: 150px !important;
+  }
+
   h1 {
     font-size: 15pt !important;
+    letter-spacing: 1px !important;
   }
 
   h2 {
     font-size: 10pt !important;
+    letter-spacing: 3px !important;
+  }
+
+  h3 {
+      margin: 4px 0px 0px 0px !important;
+      font-size: 10pt !important;
+      letter-spacing: 0px !important;
   }
 
   .blog_title {
     font-size: 25pt !important;
     text-align: center;
+  }
+
+  .title_field {
+    font-size: 25pt !important;
+  }
+
+  .date_field {
+    font-size: 8pt !important;
   }
 
   .sol_blog_rising {

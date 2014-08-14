@@ -3,9 +3,10 @@
     <% unless @main_blog.nil? %>
         <div class="blog_section">
             <div class="blog_title">
-                <span><%= @main_blog.title %></span>
-                <span><%=  @main_blog.created_at.strftime "%D" %></span>
+                <div class="title_field"><%= @main_blog.title %></div>
+                <div class="date_field"><%=  @main_blog.created_at.strftime "%D" %></div>
             </div>
+            <div style="clear:both"></div>
             <div>
                 <%= image_tag @main_blog.picture.url, class: "" %>
             </div>

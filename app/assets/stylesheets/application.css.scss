@@ -43,6 +43,10 @@ hr {
     margin: 4px 0px;
 }
 
+hr.large_margin {
+    margin: 20px 0px;
+}
+
 .clearfix:before,
 .clearfix:after {
     clear: both;
@@ -67,7 +71,27 @@ hr {
 }
 
 .header {
-    text-align: center;
+    text-align: -moz-center;
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+    .title {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 0;
+        z-index: 999;
+        color: white;
+        font-family: 'Otto';
+        font-size: 170px;
+        margin-bottom: 0px;
+        font-weight: normal;
+        line-height: 70px;
+    }
+    img {
+        position: absolute;
+        top: -50%;
+    }
 }
 
 .menu_container {
@@ -142,6 +166,14 @@ h2 {
     letter-spacing: 5px;
 }
 
+h3 {
+    margin: 7px 0px 0px 0px;
+    padding: 0;
+    text-align: center;
+    font-size: 12pt;
+    letter-spacing: 3px;
+}
+
 .about_image {
 }
 
@@ -167,7 +199,7 @@ div.about_content {
 
 .sol_blog_section {
     text-align: center;
-    padding: 20px 0px 10px 0px;
+    padding: 30px 0px 10px 0px;
 }
 
 .sol_blog div.sol_blog_section hr {
@@ -178,10 +210,10 @@ div.about_content {
 }
 
 .sol_blog_main {
-    height : 1000px;
+    max-height : 1000px;
     padding-right: 10px;
-    overflow: scroll;
-    overflow-x : hidden
+    overflow-y: auto;
+    overflow-x : hidden;
 }
 
 .instagram {
@@ -189,29 +221,33 @@ div.about_content {
 }
 
 .blog_title {
-    font-family: 'Otto';
-    font-size : 50pt;
+    position: relative;
     text-align: center;
 }
 
 div.blog_content {
     text-align: left;
-    padding: 10px 10px;
+    padding: 10px 0px;
 }
 
 .blog_section {
-    padding: 30px 10px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.blog_line_bar {
+    padding: 30px 0px 20px 0px;
     text-align: center;
 }
 
 div.submenu {
-    padding: 20px 0px;
+    padding: 10px 0px;
 }
 
 .submenu_title {
     color : rgb(136, 136, 136);
     font-family: 'Otto';
-    font-size:  40pt;
+    font-size:  50pt;
     width: 14%;     
     text-align: center;
 }
@@ -221,8 +257,12 @@ div.submenu {
     text-decoration: none;
 }
 
+.hover_title {
+    color: rgb(248, 200, 159) !important;
+}
+
 div.submenu hr {
-    margin: 35px 0px;
+    margin: 47px 0px;
 }
 
 div.travel_blog {
@@ -269,4 +309,19 @@ td img {
 
 .hr_div {
     margin-top: 3px;
+}
+
+.blog_nav_img {
+    max-width: 60%;
+}
+
+.title_field {
+    font-family: 'Otto';
+    font-size: 50pt;
+}
+
+.date_field {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }

@@ -3,14 +3,17 @@
     <div id="gallery_large" class="image_gallery">
         <ul id="myGallery">
             <% @locations.each do |l| %>
-                <li><<%= image_tag l.landing_url, title: l.name %></li>
+                <li><%= image_tag l.landing_url, title: l.name, id: "#{l.name}", data: {target: "#{destination_url(name: l.name)}"} %></li>
             <% end %>
         </ul>
     </div>
     <div id="gallery_small" class="image_gallery">
         <ul class="bxslider">
             <% @locations.each do |l| %>
-                <li><%= image_tag l.landing_url, title: l.name %></li>
+                <li>
+                    <%= image_tag l.landing_url, title: l.name, data: {target: "#{destination_url(name: l.name)}"} %>
+                    $()
+                </li>
             <% end %>
         </ul>
     </div>

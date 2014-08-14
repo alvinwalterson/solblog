@@ -13,4 +13,6 @@ class Photo < ActiveRecord::Base
 	validates_presence_of :title
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
+  default_scope -> { order('created_at DESC') }
+
 end
