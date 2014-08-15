@@ -16,7 +16,7 @@ class VisitorsController < ApplicationController
 
 	def destination
 		@location = Location.includes(:blogs).includes(:photos).find_by_name params[:name]
-		@photo = @location.landing_url
+		@photo = @location.photo.picture.url
 		@photos = @location.all_photos.limit 12
 		@destination = @location.blogs.destination.first
 		@eat_blogs = @location.blogs.eat
@@ -26,6 +26,12 @@ class VisitorsController < ApplicationController
 	end
 
 	def travel
+	end
+
+	def support
+		SupportMailer.notify(params[:support][:email], params[:support][:title], params[:support][:body]).deliver
+
+		redirect_to travel_path, notice: 'Email is successfully sent.'
 	end
 
 end

@@ -1,0 +1,17 @@
+.col-sm-8.col-sm-offset-2
+	= render 'layouts/messages'
+	%h2 Add New Location
+	%br
+	= form_for @location, class: 'form-horizontal' do |f|
+		= f.label :name
+		= f.text_field :name, class: 'form-control'
+
+		%br
+
+		= f.label :photo
+		= f.file_field :photo
+
+		%br
+
+		= f.submit class: 'btn btn-default'
+		= link_to 'Cancel', locations_path, class: 'btn btn-default'

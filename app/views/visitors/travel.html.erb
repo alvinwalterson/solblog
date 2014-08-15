@@ -1,1 +1,19 @@
-<h1>"This page is static, so it doesn't have blogs here."
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2">
+		<%= form_for :support, url: support_path, method: :post do |f| %>
+		  <div class="form-group">
+		    <%= f.label :email %>
+		    <%= f.text_field :email, class: 'form-control' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.label :title %>
+		    <%= f.text_field :title, class: 'form-control' %>
+		  </div>
+		  <div class="form-group">
+		    <%= f.label :body %>
+		    <%= f.text_area :body, rows: 5, class: 'form-control' %>
+		  </div>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		<% end %>
+	</div>
+</div>

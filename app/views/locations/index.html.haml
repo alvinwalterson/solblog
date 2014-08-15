@@ -1,0 +1,30 @@
+.main
+	.row
+		.col-sm-12
+			= render 'layouts/messages'
+			
+			= link_to 'Add New Location', new_location_path, class: 'btn btn-success pull-right'
+			%table.table{:align=> 'center'}
+				%thead
+					%td Name
+					%td Photo
+					%td Created At
+				%tbody
+					- if @locations.length > 0
+						- @locations.each do |l|
+							%tr
+								%td= l.name
+								%td
+									- unless l.photo.nil? || l.photo.picture.nil?
+										= image_tag l.photo.picture.url(:thumb)
+								%td= l.created_at.strftime "%D"
+								%td
+									= link_to 'Edit', edit_location_path(l), class: "btn btn-primary btn-xs"
+									= link_to 'Delete', location_path(l), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-primary btn-xs"
+					- else
+						%tr
+							%td{colspan: 5}
+								%h3
+									There's no locations yet. Add 
+									= link_to 'new location', new_location_path
+									here.

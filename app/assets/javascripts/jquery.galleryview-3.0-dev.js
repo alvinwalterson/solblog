@@ -827,14 +827,14 @@ if (typeof Object.create !== 'function') {
 				
 			if(!self.opts.enable_slideshow) { return; }
 			
-			dom.gv_panel.css('cursor','url(http://www.google.com/intl/en_ALL/mapfiles/openhand.cur), n-resize');
+			dom.gv_panel.css('cursor','pointer');
 			if(this.opts.pan_style === 'drag') {
 				dom.gv_panelWrap.delegate('.gv_panel img','mousedown.galleryview',function(e) {
 					self.isMouseDown = true;
-					$(this).css('cursor','url(http://www.google.com/intl/en_ALL/mapfiles/closedhand.cur), n-resize');
+					$(this).css('cursor','pointer');
 				}).delegate('.gv_panel img','mouseup.galleryview',function(e) {
 					self.isMouseDown = false;
-					$(this).css('cursor','url(http://www.google.com/intl/en_ALL/mapfiles/openhand.cur), n-resize');
+					$(this).css('cursor','pointer');
 				}).delegate('.gv_panel img','mousemove.galleryview',function(e) {
 					var distY, distX,
 						image = $(this),
@@ -846,7 +846,7 @@ if (typeof Object.create !== 'function') {
 						new_top = gv.getInt(image.css('top')) + distY;
 						new_left = gv.getInt(image.css('left')) + distX;
 							
-						image.css('cursor','url(http://www.google.com/intl/en_ALL/mapfiles/closedhand.cur), n-resize');
+						image.css('cursor','pointer');
 						
 						if(new_top > 0) new_top = 0;
 						if(new_left > 0) new_left = 0;
@@ -857,7 +857,7 @@ if (typeof Object.create !== 'function') {
 						image.css('top',new_top);
 						image.css('left',new_left);
 					} else {
-						image.css('cursor','url(http://www.google.com/intl/en_ALL/mapfiles/openhand.cur), n-resize');	
+						image.css('cursor','pointer');	
 					}
 				});
 			} else {

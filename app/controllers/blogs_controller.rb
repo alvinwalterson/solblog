@@ -92,6 +92,10 @@ class BlogsController < ApplicationController
 		end
 	end
 
+	def locations
+		
+	end
+
 	private
 
 	def get_type

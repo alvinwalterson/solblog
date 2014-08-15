@@ -29,4 +29,3 @@ locations.each do |l|
 	photo.location_id = location.id
 	photo.save
 end
-

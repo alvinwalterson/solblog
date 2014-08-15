@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   get '/travel', to: 'visitors#travel', as: 'travel'
 
   resources :blogs
+  resources :locations
 
   post '/photos/create', to: 'blogs#create_photo', as: 'photos'
   delete '/photos/:id', to: 'blogs#destroy_photo', as: 'photo'
   put '/destination/select_top', to: 'blogs#select_top', as: 'select_top'
+  post '/support', to: 'visitors#support', as: 'support'
 
 end

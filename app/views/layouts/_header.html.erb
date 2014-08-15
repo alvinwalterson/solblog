@@ -1,8 +1,14 @@
 <div class="container">
 <div>
     <div class="banner">
-        <%= link_to root_path do %>
-            <%= image_tag 'logo.jpg', :class=>'banner_img' %>
+        <% if user_signed_in? %>
+            <%= link_to locations_path do %>
+                <%= image_tag 'logo.jpg', :class=>'banner_img' %>
+            <% end %>
+        <% else %>
+            <%= link_to root_path do %>
+                <%= image_tag 'logo.jpg', :class=>'banner_img' %>
+            <% end %>
         <% end %>
     </div>
     <div class="menubar">

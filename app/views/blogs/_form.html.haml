@@ -1,23 +1,25 @@
-= form_for @blog, url: (@blog.new_record? ? blogs_path(type: @type, name: @name, category: @category) : blog_path(type: @type, name: @name, category: @category)), method: (@blog.new_record? ? :post : :put) do |f|
+= form_for @blog, role: "form", url: (@blog.new_record? ? blogs_path(type: @type, name: @name, category: @category) : blog_path(type: @type, name: @name, category: @category)), method: (@blog.new_record? ? :post : :put) do |f|
 
 	%div
 		%table{:align=>'center'}
 			%tr
-				%td
-					= f.label :title
-				%td
-					= f.text_field :title				
+				%td{:width=>'50px'}
+					= f.label :title, :class=>'control-label'
+				%td{:width=>'300px'}
+					= f.text_field :title, :class=>'form-control', :size=>80, :placeholder=>"Title here"
 			%tr
 				%td
-					= f.label :body
+					= f.label :body, :class=>'control-label'
 				%td
-					= f.text_area :body, rows: 10
+					= f.text_area :body, :class=>'form-control', :size=>80, :rows=>20, :placeholder=>"Content here"
 			%tr
 				%td
-					= f.label :picture
+					= f.label :picture, :class=>'control-label'
 				%td
 					= f.file_field :picture
 			%tr
-				%td{:colspan=>2, :align=>'center'}
-					%pre
-						= f.submit :submit
+				%td{:colspan=>2, :align=>'center', :height=>60}
+					= f.submit :submit, :class=>'btn, btn-default'
+	%br
+	%br
+	%br
