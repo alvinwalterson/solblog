@@ -150,7 +150,7 @@
         <% @stay_blogs.each do |blog| %>
             <div class="row">
                 <div class="col-sm-8">
-                    <%= link_to blog.link_url do %>
+                    <%= link_to url_with_protocol(blog.link_url) do %>
                         <%= image_tag blog.picture.url %>
                     <% end %>
                 </div>
