@@ -20,6 +20,7 @@ gem 'thin'
 gem "paperclip", "~> 4.1"
 gem "haml-rails"
 gem "rails_12factor", group: :production
+gem "will_paginate-bootstrap"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

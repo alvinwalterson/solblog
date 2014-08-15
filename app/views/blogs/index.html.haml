@@ -101,11 +101,12 @@
 					= link_to 'Add New Blog', new_blog_path(type: Blog::BLOG_EAT, name: @name, category: false), class: "btn btn-success pull-left"
 				%table#blog_edit_table.table{:align=> 'center'}
 					%thead
-						%td{:width=>'15%'} Title
+						%td{:width=>'10%'} Title
 						%td{:width=>'28%'} Body
 						%td{:width=>'15%'} Picture
+						%td{:width=>'15%'} Linked URL
 						%td{:width=>'15%'} Created At
-						%td{:width=>'20%'} Actions
+						%td{:width=>'15%'} Actions
 					%tbody
 						- if @location.blogs.eat.length > 0
 							- @location.blogs.eat.each do |blog|
@@ -113,6 +114,7 @@
 									%td= blog.title
 									%td= raw blog.body[0..100]
 									%td= image_tag blog.picture.url(:thumb)
+									%td= blog.link_url
 									%td= blog.created_at.strftime "%D"
 									%td
 										= link_to 'Edit', edit_blog_path(blog, type: Blog::BLOG_EAT, name: @name, category: false), class: "btn btn-primary btn-xs"
@@ -133,11 +135,12 @@
 					= link_to 'Add New Blog', new_blog_path(type: Blog::BLOG_STAY, name: @name, category: false), class: "btn btn-success pull-left"
 				%table#blog_edit_table.table{:align=> 'center'}
 					%thead
-						%td{:width=>'15%'} Title
+						%td{:width=>'10%'} Title
 						%td{:width=>'28%'} Body
 						%td{:width=>'15%'} Picture
+						%td{:width=>'15%'} Linked URL
 						%td{:width=>'15%'} Created At
-						%td{:width=>'20%'} Actions
+						%td{:width=>'15%'} Actions
 					%tbody
 						- if @location.blogs.stay.length > 0
 							- @location.blogs.stay.each do |blog|
@@ -145,6 +148,7 @@
 									%td= blog.title
 									%td= raw blog.body[0..100]
 									%td= image_tag blog.picture.url(:thumb)
+									%td= blog.link_url
 									%td= blog.created_at.strftime "%D"
 									%td
 										= link_to 'Edit', edit_blog_path(blog, type: Blog::BLOG_STAY, name: @name, category: false), class: "btn btn-primary btn-xs"
@@ -165,11 +169,12 @@
 					= link_to 'Add New Blog', new_blog_path(type: Blog::BLOG_PLAY, name: @name, category: false), class: "btn btn-success pull-left"
 				%table#blog_edit_table.table{:align=> 'center'}
 					%thead
-						%td{:width=>'15%'} Title
+						%td{:width=>'10%'} Title
 						%td{:width=>'28%'} Body
 						%td{:width=>'15%'} Picture
+						%td{:width=>'15%'} Linked URL
 						%td{:width=>'15%'} Created At
-						%td{:width=>'20%'} Actions
+						%td{:width=>'15%'} Actions
 					%tbody
 						- if @location.blogs.play.length > 0
 							- @location.blogs.play.each do |blog|
@@ -177,6 +182,7 @@
 									%td= blog.title
 									%td= raw blog.body[0..100]
 									%td= image_tag blog.picture.url(:thumb)
+									%td= blog.link_url
 									%td= blog.created_at.strftime "%D"
 									%td
 										= link_to 'Edit', edit_blog_path(blog, type: Blog::BLOG_PLAY, name: @name, category: false), class: "btn btn-primary btn-xs"

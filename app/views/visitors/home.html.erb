@@ -3,7 +3,7 @@
     <div id="gallery_large" class="image_gallery">
         <ul id="myGallery">
             <% @locations.each do |l| %>
-                <li><%= image_tag l.landing_url, title: l.name, id: "#{l.name}", data: {target: "#{destination_url(name: l.name)}"} %></li>
+                <li><%= image_tag l.photo.picture.url, title: l.name, id: "#{l.name}", data: {target: "#{destination_url(name: l.name)}"} %></li>
             <% end %>
         </ul>
     </div>
@@ -11,7 +11,7 @@
         <ul class="bxslider">
             <% @locations.each do |l| %>
                 <li>
-                    <%= image_tag l.landing_url, title: l.name, data: {target: "#{destination_url(name: l.name)}"} %>
+                    <%= image_tag l.photo.picture.url, title: l.name, data: {target: "#{destination_url(name: l.name)}"} %>
                     $()
                 </li>
             <% end %>
@@ -28,13 +28,12 @@
         </div>
         <br />
         <div class="sol_blog_main">
-            <br />
             <% unless @main_blog.nil? %>
-                <div>
-                    <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>
-                </div>
                 <div class="blog_title title_field">
                     <%= @main_blog.title %>
+                </div>
+                <div>
+                    <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>
                 </div>
                 <div class="blog_content">
                     <%= raw @main_blog.body %>

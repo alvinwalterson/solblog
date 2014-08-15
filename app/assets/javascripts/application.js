@@ -20,8 +20,8 @@
   // Instagram Feed Photos
   var feed = new Instafeed({
         get: 'tagged',      
-        tagName: 'messi',   // Replace with Sol Blog tag
+        tagName: 'thesimplesol',   // Replace with Sol Blog tag
         limit: 12, 
-        clientId: 'c949d548ff5a48a2b10b31e660db9fb7'  // Client ID from Instagram
+        clientId: 'd2eba98f01fb4bbbb2b45f11535a2c33'  // Client ID from Instagram
   });
   feed.run();

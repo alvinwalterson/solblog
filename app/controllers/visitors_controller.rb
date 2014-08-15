@@ -7,7 +7,7 @@ class VisitorsController < ApplicationController
 	end
 
 	def solblog
-		@main_blog, @old_blog = Blog.main_blogs.limit 2
+		@main_blogs = Blog.main_blogs.paginate(page: params[:page], per_page: 2)
 	end
 
 	def mysol

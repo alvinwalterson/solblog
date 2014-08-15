@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808200454) do
+ActiveRecord::Schema.define(version: 20140815085803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140808200454) do
     t.datetime "picture_updated_at"
     t.boolean  "category",             default: false
     t.boolean  "featured",             default: false
+    t.string   "link_url",             default: "javascript:void(0)"
   end
 
   create_table "locations", force: true do |t|

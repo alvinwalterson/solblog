@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
 	def get_locations
-		@locations = Location.all
+		@locations = Location.includes(:photos).all
 	end
 
 end

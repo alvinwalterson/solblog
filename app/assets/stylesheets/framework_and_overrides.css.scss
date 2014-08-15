@@ -201,3 +201,12 @@ h4 {
 .dropdown-menu > li > a {
   text-align: left;
 }
+
+.pagination > li > a {
+  color: rgb(244, 173, 112);
+}
+
+.pagination > .active > span {
+  background-color: rgb(244, 173, 112);
+  border-color: rgb(244, 173, 112);
+}

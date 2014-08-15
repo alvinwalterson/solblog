@@ -9,6 +9,11 @@
 					= f.text_field :title, :class=>'form-control', :size=>80, :placeholder=>"Title here"
 			%tr
 				%td
+					= f.label :link_url, :class=>'control-label'
+				%td
+					= f.text_field :link_url, :class=>'form-control', :size=>80, :placeholder=>"Link Url here"
+			%tr
+				%td
 					= f.label :body, :class=>'control-label'
 				%td
 					= f.text_area :body, :class=>'form-control', :size=>80, :rows=>20, :placeholder=>"Content here"
