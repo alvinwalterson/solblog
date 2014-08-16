@@ -27,8 +27,8 @@ module Solblog
       domain: "solblog.com",
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: "alvinwalterson@gmail.com",
-      password: "dkaghdkagh"
+      user_name: "thesimplesol@gmail.com",
+      password: "danielle120588"
     }
 
   end

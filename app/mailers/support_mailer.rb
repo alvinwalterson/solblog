@@ -5,8 +5,8 @@ class SupportMailer < ActionMailer::Base
 		@sender = sender
 		@title = title
 		@body = body
-    mail(:to => "alvinwalterson@gmail.com",
+    mail(:to => "thesimplesol@gmail.com",
          :from => @sender,
-         :subject => "Solblog Support : #{@title}")
+         :subject => "Simple Sole Blog Support : #{@title}")
 	end
 end

@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 gem "paperclip", "~> 4.1"
+gem "aws-sdk"
 gem "haml-rails"
 gem "rails_12factor", group: :production
 gem "will_paginate-bootstrap"
