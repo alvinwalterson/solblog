@@ -24,7 +24,7 @@
         // limit: 12, 
         // clientId: 'd2eba98f01fb4bbbb2b45f11535a2c33'  // Client ID from Instagram
         get: 'user'
-        userID: 1452429841l,
+        userId: 1452429841l,
         accessToken: '1452429841.467ede5.4064223743964747a1de5d1b23c705ff'
   });
   feed.run();
