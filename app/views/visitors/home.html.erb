@@ -11,7 +11,8 @@
         <ul class="bxslider">
             <% @locations.each do |l| %>
                 <li>
-                    <%= image_tag l.photo.picture.url(:medium), title: l.name, data: {target: "#{destination_url(name: l.name)}"} %>
+                    <%= image_tag l.photo.picture.url, title: l.name, data: {target: "#{destination_url(name: l.name)}"} %>
+                    $()
                 </li>
             <% end %>
         </ul>
