@@ -20,14 +20,13 @@
             <div class="pull-left hr_div" style="width:40%"><hr/><hr/></div>
             <div style="clear: both;"></div>
         </div>
-        <br />
-        <div class="sol_blog_main">
+        <div class="sol_blog_main blog_title">
             <% unless @destination.nil? %>
+                <div class="title_field">
+                    <%= @destination.title %>
+                </div>
                 <div>
                     <%= image_tag @destination.picture.url, class: "blog_mid_img" %>
-                </div>
-                <div class="blog_title">
-                    <%= @destination.title %>
                 </div>
                 <div class="blog_content">
                     <%= raw @destination.body %>
