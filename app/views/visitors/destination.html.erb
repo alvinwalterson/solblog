@@ -1,7 +1,9 @@
 <div class="col-sm-12">
     <div class="header">
-        <div class='title'><%= params[:name] %></div>
-        <%= image_tag @photo, id:"dest_blog_img", class: "blog_big_img", title: @photo %>
+        <%= link_to destination_path(name: params[:name]) do %>
+            <div class='title'><%= params[:name] %></div>
+            <%= image_tag @photo, id:"dest_blog_img", class: "blog_big_img", title: @photo %>
+        <% end %>
     </div>
     <div class="submenu">
         <div style="width:15%" class="pull-left"><hr/></div>
