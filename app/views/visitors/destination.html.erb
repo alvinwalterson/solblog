@@ -62,9 +62,9 @@
                         </div>
                     </div>
                     <% @featured_blogs.each_with_index do |blog, index| %>
-                        <p id="featured-blog-<%=index %>", class="<%= index == 0 ? 'show' : 'hidden'%> featured_blog" >
+                        <span id="featured-blog-<%=index %>", class="<%= index == 0 ? 'show' : 'hidden'%> featured_blog" >
                             <%= raw blog.body%>
-                        </p>
+                        </span>
                     <% end %>
                 </div>
             </div>
