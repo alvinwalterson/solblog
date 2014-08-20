@@ -172,7 +172,6 @@
               imageUrl = imageUrl.replace('http://', '//');
             }
             img.src = imageUrl;
-            img.className = 'img-thumbnail';
             div = document.createElement('div');
             div.className = 'col-xs-6 col-sm-4 col-md-3';
             if (this.options.links === true) {

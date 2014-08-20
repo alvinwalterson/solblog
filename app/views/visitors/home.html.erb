@@ -1,58 +1,60 @@
 <div class="sol_blog">
-<div class="col-sm-12">
-    <div id="gallery_large" class="image_gallery">
-        <ul id="myGallery">
-            <% @locations.each do |l| %>
-                <li><%= image_tag l.photo.picture.url, title: l.name, id: "#{l.name}", data: {target: "#{destination_url(name: l.name)}"} %></li>
-            <% end %>
-        </ul>
-    </div>
-    <div id="gallery_small" class="image_gallery">
-        <ul class="bxslider">
-            <% @locations.each do |l| %>
-                <li>
-                    <%= image_tag l.photo.picture.url, title: l.name, data: {target: "#{destination_url(name: l.name)}"} %>
-                    $()
-                </li>
-            <% end %>
-        </ul>
-    </div>
-</div>
-<div class="col-sm-12">
-    <div class="sol_blog_section">
-        <div>
-            <div class="pull-left hr_div" style="width:35%;"><hr/><hr/></div>
-            <div class="pull-left" style="width:30%;"><h2>SOL BLOG</h2></div>
-            <div class="pull-left hr_div" style="width:35%;"><hr/><hr/></div>
-            <div style="clear: both;"></div>
+    <div class="col-sm-12">
+        <div id="gallery_large" class="image_gallery">
+            <ul id="myGallery">
+                <% @locations.each do |l| %>
+                    <li><%= image_tag l.photo.picture.url, title: l.name, id: "#{l.name}", data: {target: "#{destination_url(name: l.name)}"} %></li>
+                <% end %>
+            </ul>
         </div>
-        <br />
-        <div class="sol_blog_main">
-            <% unless @main_blog.nil? %>
-                <div class="blog_title title_field">
-                    <%= @main_blog.title %>
-                </div>
-                <div>
-                    <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>
-                </div>
-                <div class="blog_content">
-                    <%= raw @main_blog.body %>
-                </div>
-            <% end %>
+        <div id="gallery_small" class="image_gallery">
+            <ul class="bxslider">
+                <% @locations.each do |l| %>
+                    <li>
+                        <%= image_tag l.photo.picture.url, title: l.name, data: {target: "#{destination_url(name: l.name)}"} %>
+                        $()
+                    </li>
+                <% end %>
+            </ul>
         </div>
     </div>
-    <div>
+    <div class="col-sm-12">
         <div class="sol_blog_section">
-            <div class="pull-left hr_div" style="width:32%;"><hr/><hr/></div>
-            <div class="pull-left" style="width:36%;"><h2>INSTAGRAM</h2></div>
-            <div class="pull-left hr_div" style="width:32%;"><hr/><hr/></div>
-            <div class="pull-left" style="clear: both;"></div>
+            <div>
+                <div class="pull-left hr_div" style="width:35%;"><hr/><hr/></div>
+                <div class="pull-left" style="width:30%;"><h2>SOL BLOG</h2></div>
+                <div class="pull-left hr_div" style="width:35%;"><hr/><hr/></div>
+                <div style="clear: both;"></div>
+            </div>
+            <br />
+            <div class="sol_blog_main">
+                <% unless @main_blog.nil? %>
+                    <div class="blog_title title_field">
+                        <%= @main_blog.title %>
+                    </div>
+                    <div>
+                        <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>
+                    </div>
+                    <div class="blog_content">
+                        <%= raw @main_blog.body %>
+                    </div>
+                <% end %>
+            </div>
         </div>
-        <br />
-        <div id="wrapper">
-            <div id="instafeed"></div>
+        <div>
+            <div class="sol_blog_section">
+                <div class="pull-left hr_div" style="width:32%;"><hr/><hr/></div>
+                <div class="pull-left" style="width:36%;"><h2>INSTAGRAM</h2></div>
+                <div class="pull-left hr_div" style="width:32%;"><hr/><hr/></div>
+                <div class="pull-left" style="clear: both;"></div>
+            </div>
+            <br />
+            <div id="wrapper">
+                <div id="instafeed"></div>
+            </div>
+        </div>    
         </div>
-    </div>    
     </div>
 </div>
-</div>
+<br />
+<br />

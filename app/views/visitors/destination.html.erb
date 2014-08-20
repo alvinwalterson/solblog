@@ -77,6 +77,17 @@
                 <div style="clear: both;"></div>
             </div>
 
+            <div style="height:300px;overflow-y:scroll;">
+                <div class="am-container" id="am-container">
+                    <% @photos.each do |photo| %>
+                        <%= link_to photo.picture.url do %>
+                            <%= image_tag photo.picture.url(:thumb), class: "img-thumbnail" %>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+
+            <!--
             <div class="row">
                 <% @photos.each do |photo| %>
                     <div id="photo_viewer" class="col-xs-6 col-sm-4 col-md-3">
@@ -86,6 +97,7 @@
                     </div>
                 <% end %>
             </div>
+            -->
         </div>
     </div>
 
