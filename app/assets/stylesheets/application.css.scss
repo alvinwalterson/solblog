@@ -194,8 +194,15 @@ div.quote {
 }
 
 div.about_content {
+    font-family: 'DayRoman';
+    font-size: 11pt;
     padding: 40px 10px;
     text-align: left
+}
+
+.featured_blog {
+    font-family: 'DayRoman';
+    font-size: 11pt;
 }
 
 .quote_font {
@@ -230,6 +237,8 @@ div.about_content {
 }
 
 div.blog_content {
+    font-family: 'DayRoman';
+    font-size: 11pt;
     text-align: left;
     padding: 10px 0px;
 }
