@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require isotope.pkgd
 //= require_tree .
 
 //= require image_slider

@@ -33,3 +33,25 @@ div.gv_galleryWrap {
 .gv_panel {
     cursor: pointer !important;
 }
+
+#pinterest_photo li {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+#pinterest_photo li a img {
+  width: 100%;
+  height: auto;
+}
+
+.image-item {
+    float: left;
+    margin-right: 11px;
+    margin-bottom: 11px;
+}
+
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}

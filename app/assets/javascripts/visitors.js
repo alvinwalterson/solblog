@@ -127,11 +127,23 @@ $(document).ready(function() {
     location.href = target;
   });
 
-  // Photo pinterest
+  // Photo pinterest after loading all images
   imagesLoaded( $('#pinterest_photo'), function( instance ) {
-    var $container = $('#pinterest_photo').isotope({
-      itemSelector: '.image-item',
-      layoutMode: 'masonry'
-    });    
+
+    // Prepare layout options.
+    var options = {
+      align: 'center',
+      autoResize: true, // This will auto-update the layout when the browser window is resized.
+      container: $('#pinterest'), // Optional, used for some extra CSS styling
+      offset: 10, // Optional, the distance between grid items
+      itemWidth: '20%', // Optional, the width of a grid item
+      flexibleWidth: true // Optional, "true" or "false", adjusts item width to create optimal layout based on browser size
+    };
+
+    // Get a reference to your grid items.
+    var handler = $('#pinterest_photo div');
+
+    // Call the layout function
+    handler.wookmark(options);
   });
 });

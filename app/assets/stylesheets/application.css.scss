@@ -237,7 +237,7 @@ div.about_content {
 
 
 .blog_title {
-    position: relative;
+/*  position: relative;*/
     text-align: center;
 }
 
@@ -341,34 +341,23 @@ td img {
 }
 
 .date_field {
-    position: absolute;
+/*  position: absolute;
     right: 0px;
     bottom: 0px;
-}
-
-#instafeed {
-    
+*/
 }
 
 input, textarea {
     font-family: 'DayRoman';
 }
 
+#pinterest {
+    position: relative;
+}
+
 #pinterest_photo {
     width: 100%;
     padding: 5px 30px;
-}
-
-.image-item {
-    float: left;
-    margin-right: 11px;
-    margin-bottom: 11px;
-}
-
-.isotope:after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .title_field a {

@@ -1,4 +1,4 @@
-<div class="col-sm-12">
+<div>
     <div class="header">
         <%= link_to destination_path(name: params[:name]) do %>
             <div class='title'><%= params[:name] %></div>
@@ -77,16 +77,16 @@
                 <div style="clear: both;"></div>
             </div>
 
-            <div class="row">
-            <div id="pinterest_photo" class="isotope">
-                <% @photos.each do |photo| %>
-                    <div class="image-item">
-                        <%= link_to photo.picture.url do %>
-                            <%= image_tag photo.picture.url(:thumb), class: "img-thumbnail", style: "width:150px;" %>
-                        <% end %>
-                    </div>
-                <% end %>
-            </div>
+            <div id="pinterest">
+                <div id="pinterest_photo">
+                    <% @photos.each do |photo| %>
+                        <div>
+                            <%= link_to photo.picture.url do %>
+                                <%= image_tag photo.picture.url(:thumb), class: "img-thumbnail", style: "width:150px" %>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
             </div>
         </div>
     </div>

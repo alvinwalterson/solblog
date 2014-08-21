@@ -580,9 +580,11 @@ if (typeof Object.create !== 'function') {
 		},
 		
 		showItem: function(i) {
-			if(isNaN(i)) { return; }
+			if(isNaN(i)) { return; }			
+			if(jQuery("div.gv_frame:eq("+i+") div.gv_thumbnail").hasClass("current"))
+				return;
 			if(!this.opts.show_filmstrip) { i = i % this.numImages; }
-			
+
 			var self = this,
 				dom = this.dom,
 				frame_i = i,
@@ -866,7 +868,7 @@ if (typeof Object.create !== 'function') {
 		},
 		
 		bindActions: function() {
-			var self = this,
+			var self = this, 
 				dom = this.dom;
 			
 			dom.gv_showOverlay.bind('click.galleryview',function(){
@@ -890,21 +892,21 @@ if (typeof Object.create !== 'function') {
 				}
 				return false;
 			});
-            
-            dom.gv_navWrapPrev.delegate('div','click.galleryview',function(){
-                var el = $(this);
-                if(el.hasClass('gv_navNext')) {
-                    self.showNext();
-                } else if(el.hasClass('gv_navPrev')) {
-                    self.showPrev();
-                } else if(el.hasClass('gv_navPlay')) {
-                    self.startSlideshow(true);
-                } else if(el.hasClass('gv_navPause')) {
-                    self.stopSlideshow(true);
-                }
-                return false;
-            });
-			
+      
+      dom.gv_navWrapPrev.delegate('div','click.galleryview',function(){
+        var el = $(this);
+        if(el.hasClass('gv_navNext')) {
+            self.showNext();
+        } else if(el.hasClass('gv_navPrev')) {
+            self.showPrev();
+        } else if(el.hasClass('gv_navPlay')) {
+            self.startSlideshow(true);
+        } else if(el.hasClass('gv_navPause')) {
+            self.stopSlideshow(true);
+        }
+        return false;
+      });
+
 			dom.gv_panelNavNext.bind('click.galleryview',function(){ 
 				self.showNext(); 
 				return false;
@@ -914,10 +916,10 @@ if (typeof Object.create !== 'function') {
 				return false;
 			});
 			
-			dom.gv_filmstripWrap.delegate('.gv_frame','click.galleryview',function(){
+			dom.gv_filmstripWrap.delegate('.gv_frame','click.galleryview',function(){				
 				var el = $(this),
 					i = el.data('frameIndex');
-				
+
 				this.navAction = 'frame';
 				self.showItem(i);
 				return false;
