@@ -110,22 +110,24 @@ $(document).ready(function() {
     $('.menu_dot').show();
   }
 
+  // Photo lightbox
   $(function() {
     $('#pinterest_photo div a').lightbox(); 
   });
 
-  // image gallery big
+  // image gallery link for desktop
   $('body').on('click', 'div.gv_galleryWrap div.gv_gallery div.gv_panelWrap div.gv_panel img', function() {
     var target = $('div.gv_filmstripWrap div.gv_filmstrip div.gv_frame div.current img').first().attr("target");
     location.href = target;
   });
 
-  // image gallery mobile
+  // image gallery link for mobile
   $('body').on('click', 'ul.bxslider li img', function() {
     var target = $(this).attr("data-target");
     location.href = target;
   });
 
+  // Photo pinterest
   imagesLoaded( $('#pinterest_photo'), function( instance ) {
     var $container = $('#pinterest_photo').isotope({
       itemSelector: '.image-item',
