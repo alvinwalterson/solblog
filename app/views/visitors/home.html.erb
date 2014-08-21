@@ -30,7 +30,9 @@
             <div class="sol_blog_main">
                 <% unless @main_blog.nil? %>
                     <div class="blog_title title_field">
-                        <%= @main_blog.title %>
+                        <%= link_to solblog_path do %>
+                            <%= @main_blog.title %>
+                        <% end %>
                     </div>
                     <div>
                         <%= image_tag @main_blog.picture.url, class: "blog_mid_img" %>

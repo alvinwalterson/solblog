@@ -111,7 +111,7 @@ $(document).ready(function() {
   }
 
   $(function() {
-    $('#photo_viewer a').lightbox(); 
+    $('#pinterest_photo div a').lightbox(); 
   });
 
   // image gallery big
@@ -126,4 +126,10 @@ $(document).ready(function() {
     location.href = target;
   });
 
+  imagesLoaded( $('#pinterest_photo'), function( instance ) {
+    var $container = $('#pinterest_photo').isotope({
+      itemSelector: '.image-item',
+      layoutMode: 'masonry'
+    });    
+  });
 });

@@ -77,27 +77,17 @@
                 <div style="clear: both;"></div>
             </div>
 
-            <div style="height:300px;overflow-y:scroll;">
-                <div class="am-container" id="am-container">
-                    <% @photos.each do |photo| %>
-                        <%= link_to photo.picture.url do %>
-                            <%= image_tag photo.picture.url(:thumb), class: "img-thumbnail" %>
-                        <% end %>
-                    <% end %>
-                </div>
-            </div>
-
-            <!--
             <div class="row">
+            <div id="pinterest_photo" class="isotope">
                 <% @photos.each do |photo| %>
-                    <div id="photo_viewer" class="col-xs-6 col-sm-4 col-md-3">
+                    <div class="image-item">
                         <%= link_to photo.picture.url do %>
-                            <%= image_tag photo.picture.url, class: "img-thumbnail" %>
+                            <%= image_tag photo.picture.url(:thumb), class: "img-thumbnail", style: "width:150px;" %>
                         <% end %>
                     </div>
                 <% end %>
             </div>
-            -->
+            </div>
         </div>
     </div>
 

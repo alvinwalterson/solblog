@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require isotope.pkgd
 //= require_tree .
 
 //= require image_slider
@@ -24,6 +25,7 @@
         // limit: 12, 
         // clientId: 'd2eba98f01fb4bbbb2b45f11535a2c33'  // Client ID from Instagram
         get: 'user',
+        limit: 12,
         userId: 1452429841,
         accessToken: '1452429841.467ede5.4064223743964747a1de5d1b23c705ff'
   });
