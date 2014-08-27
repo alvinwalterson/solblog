@@ -31,9 +31,9 @@
                         <% @locations.each do |l| %>
                             <li>
                             <% if user_signed_in? %>
-                                <%= link_to l.name, blogs_path(name: l.name) %>
+                                <%= link_to l.name.upcase, blogs_path(name: l.name) %>
                             <% else %>
-                                <%= link_to l.name, destination_path(name: l.name) %>
+                                <%= link_to l.name.upcase, destination_path(name: l.name) %>
                             <% end %>
                             </li>
                         <% end %>

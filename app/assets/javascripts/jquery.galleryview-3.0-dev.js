@@ -296,7 +296,7 @@ if (typeof Object.create !== 'function') {
 				height: heights.filmstrip
 			});
 			
-			var gap = 20;
+			var gap = 30;
 
 			// gallery
 			if(this.opts.show_filmstrip) {

@@ -86,14 +86,14 @@ hr.large_margin {
         position: absolute;
         width: 100%;
         text-align: center;
-        bottom: 0;
+        bottom: 40%;
         z-index: 999;
         color: white;
         font-family: 'Otto';
         font-size: 170px;
         margin-bottom: 0px;
         font-weight: normal;
-        line-height: 70px;
+        line-height: 0px;
     }
     img {
         position: absolute;
@@ -218,7 +218,11 @@ div.about_content {
 
 .sol_blog_section {
     text-align: center;
-    padding: 5px 0px 15px 0px;
+    padding: 30px 0px 0px 0px;
+}
+
+.sol_blog_section .line_bar {
+    padding: 0px 0px 30px 0px;
 }
 
 .sol_blog div.sol_blog_section hr {
