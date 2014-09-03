@@ -150,11 +150,13 @@ $(document).ready(function() {
 
   // To show/hide Comments area
   $("#leave_comment").click(function(){
+    $("#comment_show").hide();
     $("#comment_input").slideDown(1000);
     $("html, body").delay(1000).animate({scrollTop: $('#comment-form').offset().top}, 300);
   });
 
   $("#view_comment").click(function(){
+    $("#comment_input").hide();
     $("#comment_show").slideToggle(1000);
   })
 
