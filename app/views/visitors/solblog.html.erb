@@ -45,9 +45,9 @@
             <div id="comment_input" class="row" style="<%= 'display:none;' unless @comment_show %>" >
                 <div class="col-sm-10 col-sm-offset-1">
                     <% blog.comments.each do |comment| %>
-                        <div  class="c-comment-area">
+                        <div  class="c-comment-area c-font-dayroman">
                             <h3 class="c-comment-name"><%= comment.name %></h3>
-                            <p><%= raw comment.comment %></p>
+                            <p class="c-font-dayroman c-comment-content"><%= raw comment.comment %></p>
                         </div>
                     <% end %>
                 </div>
@@ -76,7 +76,7 @@
                     <% blog.comments.each do |comment| %>
                         <div  class="c-comment-area">
                             <h3 class="c-comment-name"><%= comment.name %></h3>
-                            <p><%= raw comment.comment %></p>
+                            <p class="c-font-dayroman c-comment-content"><%= raw comment.comment %></p>
                         </div>
                     <% end %>
                     <a href="#leave_comment" id="comment_hide1"><img src="/assets/panel-up-big.png" style="opacity:0.5;" /></a>
