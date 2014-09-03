@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   delete '/photos/:id', to: 'blogs#destroy_photo', as: 'photo'
   put '/destination/select_top', to: 'blogs#select_top', as: 'select_top'
   post '/support', to: 'visitors#support', as: 'support'
+  post '/solblog', to: 'visitors#post_comment', as: 'post_comment'
 
 end

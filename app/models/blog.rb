@@ -9,6 +9,7 @@ class Blog < ActiveRecord::Base
 	BLOG_TYPES = [nil, BLOG_MAIN, BLOG_MYSOL, BLOG_EAT, BLOG_PLAY, BLOG_STAY]
 
 	has_many :photos, dependent: :destroy
+  has_many :comments
 	belongs_to :location
 
 	has_attached_file :picture, 

@@ -8,6 +8,7 @@ class VisitorsController < ApplicationController
 
 	def solblog
 		@main_blogs = Blog.main_blogs.paginate(page: params[:page], per_page: 1)
+		@comment_show = params[:comment_show] || false
 	end
 
 	def mysol
@@ -32,6 +33,16 @@ class VisitorsController < ApplicationController
 		SupportMailer.notify(params[:support][:email], params[:support][:title], params[:support][:body]).deliver
 
 		redirect_to travel_path, notice: 'Email is successfully sent.'
+	end
+
+	def post_comment
+		@blog = Blog.find(params[:blog_id])
+		@comment = @blog.comments.create permit_comment_params
+		redirect_to solblog_path(comment_show: params[:comment_show]) + "#comment-form"
+	end
+
+	def permit_comment_params
+		params.require(:comment).permit(:name, :comment)
 	end
 
 end

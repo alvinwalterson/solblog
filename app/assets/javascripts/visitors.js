@@ -3,6 +3,7 @@ $(document).ready(function() {
   // To navigate between eat/play/stay section
   $("#location_blog_div").show();
 
+  // To navigate top rated blogs in each destination page
   var update_status = function() {
     var $controller = $("#control-bar");
     var count = $controller.data('total');
@@ -54,7 +55,7 @@ $(document).ready(function() {
     update_status();
   });
  
-
+  // Maintain submenu color when it is activated
   $.each($(".submenu .submenu_title"), function(index, title) {
     var target = $($(title).data("target"));
     target.hide();
@@ -145,5 +146,17 @@ $(document).ready(function() {
 
     // Call the layout function
     handler.wookmark(options);
+  });
+
+  // To show/hide Comments area
+  $("#comment").click(function(){
+    $("#comment_show").slideDown(1000);
+    $("html, body").delay(1000).animate({
+        scrollTop: $('#comment_input').offset().top 
+    }, 300);    
+  });
+
+  $("#comment_hide").click(function(){
+    $("#comment_show").slideUp(1000);
   });
 });

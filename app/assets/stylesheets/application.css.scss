@@ -35,6 +35,9 @@
     font-style: normal; 
 }
 
+$link-color: rgb(150, 150, 150);
+$link-active-color: rgb(244, 173, 112);
+
 body {
     background-color: rgb(255, 255, 255);
     font-family: 'Florencesans';
@@ -108,7 +111,7 @@ hr.large_margin {
 
 .menu_dot {
     margin-top: 7px;
-    color: rgb(244, 173, 112);
+    color: $link-active-color;
     font-style: bold;
     font-size: 12pt;
     font-family: 'Florencesans';
@@ -267,7 +270,7 @@ div.submenu {
 }
 
 .submenu_title {
-    color : rgb(136, 136, 136);
+    color : $link-color;
     font-family: 'Otto';
     font-size:  50pt;
     width: 14%;     
@@ -275,12 +278,12 @@ div.submenu {
 }
 
 .submenu_title:hover, .submenu_title:focus {
-    color: rgb(248, 200, 159);
+    color: $link-active-color;
     text-decoration: none;
 }
 
 .hover_title {
-    color: rgb(248, 200, 159) !important;
+    color: $link-active-color !important;
 }
 
 div.submenu hr {
@@ -367,4 +370,42 @@ input, textarea {
 .title_field a {
     text-decoration: none;
     color: #3c3c3c;
+}
+
+.c-no-margin-bottom {
+  margin-bottom: 0px;
+}
+
+.c-no-padding-bottom {
+  padding-bottom: 0px;
+}
+
+.c-border-right {
+    border-right: 1px solid #dddddd;
+}
+
+.c-comment-bar-pad {
+    padding: 15px 0px 15px 0px;
+}
+
+.c-no-margin {
+    margin: 0px;
+}
+
+.c-no-padding {
+    padding: 0px;
+}
+
+.c-vertical-middle {
+    vertical-align: middle !important;
+}
+
+.c-comment-area {
+    margin: 20px 0px 20px 0px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.c-comment-name {
+    padding: 10px 0px;
+    text-align: left;
 }

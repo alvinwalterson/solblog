@@ -2,18 +2,18 @@
 	<div class="col-sm-8 col-sm-offset-2">
 		<%= form_for :support, url: support_path, method: :post do |f| %>
 		  <div class="form-group">
-		    <%= f.label :email %>
+		    <%= f.label(:email, 'EMAIL') %>
 		    <%= f.text_field :email, class: 'form-control' %>
 		  </div>
 		  <div class="form-group">
-		    <%= f.label :title %>
+		    <%= f.label(:title, 'TITLE') %>
 		    <%= f.text_field :title, class: 'form-control' %>
 		  </div>
 		  <div class="form-group">
-		    <%= f.label :body %>
+		    <%= f.label(:body, 'BODY') %>
 		    <%= f.text_area :body, rows: 5, class: 'form-control' %>
 		  </div>
-		  <button type="submit" class="btn btn-default">Submit</button>
+		  <button type="submit" class="btn btn-default">SUBMIT</button>
 		<% end %>
 	</div>
 	<br />

@@ -81,6 +81,9 @@ section {
   @extend .btn-xs;
 }
 
+$link-color: rgb(150, 150, 150);
+$link-active-color: rgb(244, 173, 112); 
+
 .container {
   width: 792px;
 }
@@ -183,14 +186,23 @@ h4 {
 }
 
 .nav li a {
-    color: rgb(150, 150, 150);
+    color: $link-color;
     font-family: 'Florencesans';
     font-size: 10pt;
+}
+
+a.comment {
+  color: #3c3c3c;
+}
+
+a.comment:hover, a.comment:focus, a.comment:active {
+  color: $link-active-color;  
 }
 
 a:hover, a:focus, a:active {
   outline: none;
   border: none;
+  text-decoration: none;
 }
 
 .nav .open > a:hover,
@@ -199,7 +211,7 @@ a:hover, a:focus, a:active {
 }
 
 .nav li > a:hover, .nav li > a:focus {
-  color: rgb(244, 173, 112);
+  color: $link-active-color;
   background: transparent;
 }
 
@@ -208,10 +220,10 @@ a:hover, a:focus, a:active {
 }
 
 .pagination > li > a {
-  color: rgb(244, 173, 112);
+  color: $link-active-color;
 }
 
 .pagination > .active > span {
-  background-color: rgb(244, 173, 112);
-  border-color: rgb(244, 173, 112);
+  background-color: $link-active-color;
+  border-color: $link-active-color;
 }

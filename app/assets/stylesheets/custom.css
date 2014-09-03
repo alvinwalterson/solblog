@@ -45,9 +45,9 @@ div.gv_galleryWrap {
 }
 
 .image-item {
-    float: left;
-    margin-right: 11px;
-    margin-bottom: 11px;
+  float: left;
+  margin-right: 11px;
+  margin-bottom: 11px;
 }
 
 .isotope:after {
