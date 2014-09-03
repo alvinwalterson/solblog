@@ -149,14 +149,20 @@ $(document).ready(function() {
   });
 
   // To show/hide Comments area
-  $("#comment").click(function(){
-    $("#comment_show").slideDown(1000);
-    $("html, body").delay(1000).animate({
-        scrollTop: $('#comment_input').offset().top 
-    }, 300);    
+  $("#leave_comment").click(function(){
+    $("#comment_input").slideDown(1000);
+    $("html, body").delay(1000).animate({scrollTop: $('#comment-form').offset().top}, 300);
   });
 
+  $("#view_comment").click(function(){
+    $("#comment_show").slideToggle(1000);
+  })
+
   $("#comment_hide").click(function(){
+    $("#comment_input").slideUp(1000);
+  });
+
+  $("#comment_hide1").click(function(){
     $("#comment_show").slideUp(1000);
   });
 });

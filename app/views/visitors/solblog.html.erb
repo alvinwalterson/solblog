@@ -35,14 +35,14 @@
                             <span>FOLLOW ON BLOG LOVIN'</span>
                         </td>
                         <td class="c-vertical-middle">
-                            <a href="#comment_input" id="comment" class="comment">LEAVE A COMMENT</a>
+                            <a href="#comment_input" id="leave_comment" class="comment">LEAVE A COMMENT</a>
                             &nbsp;/&nbsp;
-                            <%= blog.comments.count %> COMMENTS</a>
+                            <a href="#comment_show" id="view_comment" class="comment"><%= blog.comments.count %> COMMENTS</a>
                         </td>
                     </tr>
                 </table>
             </div>
-            <div id="comment_show" class="row" style="<%= 'display:none;' unless @comment_show %>" >
+            <div id="comment_input" class="row" style="<%= 'display:none;' unless @comment_show %>" >
                 <div class="col-sm-10 col-sm-offset-1">
                     <% blog.comments.each do |comment| %>
                         <div  class="c-comment-area">
@@ -53,7 +53,7 @@
                 </div>
                 <br />
                 <br />
-                <div id="comment_input" class="col-sm-8 col-sm-offset-2">
+                <div class="col-sm-8 col-sm-offset-2">
                     <a href="#" id="comment-form"></a>
                     <%= form_for :comment, url: post_comment_path(blog_id: blog.id, comment_show: true), method: :post do |f| %>
                         <div class="form-group">
@@ -68,7 +68,18 @@
                         <br />
                         <br />
                     <% end %>
-                    <a href="#comment" id="comment_hide"><img src="/assets/panel-up-big.png" style="opacity:0.5;" /></a>
+                    <a href="#leave_comment" id="comment_hide"><img src="/assets/panel-up-big.png" style="opacity:0.5;" /></a>
+                </div>
+            </div>
+            <div id="comment_show" class="row" style="display:none;" >
+                <div class="col-sm-10 col-sm-offset-1">
+                    <% blog.comments.each do |comment| %>
+                        <div  class="c-comment-area">
+                            <h3 class="c-comment-name"><%= comment.name %></h3>
+                            <p><%= raw comment.comment %></p>
+                        </div>
+                    <% end %>
+                    <a href="#" id="comment_hide1"><img src="/assets/panel-up-big.png" style="opacity:0.5;" /></a>
                 </div>
             </div>
             <hr />
