@@ -1,91 +1,141 @@
 <div class="main">
     <h2>SOL BLOG</h2>
-        <% @main_blogs.each do |blog| %>
-            <div class="blog_section c-no-padding-bottom">
-                <div class="blog_title">
-                    <div class="title_field"><%= blog.title %></div>
-                    <div class="date_field"><%=  blog.created_at.strftime "%D" %></div>
-                </div>
-                <div style="clear:both"></div>
-                <div>
-                    <%= image_tag blog.picture.url, class: "" %>
-                </div>
-                <div class="blog_content"><%= raw blog.body %></div>
-                <br />
-                <table class="table table-bordered">
-                    <tr>
-                        <td>
-                            <a href="http://instagram.com/mysimplesol" class="share_icon"   target="_blank" title="Share on Instagram">
-                                <img src="/assets/share_instagram.jpg">
-                            </a>
-                            <a href="http://www.pinterest.com/thesimplesol"
-                                 class="share_icon" target="_blank" title="Share on Pinterst">
-                                <img src="/assets/share_pinterst.jpg">
-                            </a>
-                            <a href="http://twitter.com/thesimplesol" class="share_icon" 
-                                target="_blank" title="Share on Twitter">
-                                <img src="/assets/share_twitter.jpg">
-                            </a>
-                            <a href="http://www.facebook.com/thesimplesol" 
-                                class="share_icon" target="_blank" title="Share on Facebook">
-                                <img src="/assets/share_facebook.jpg">
-                            </a>
-                        </td>
-                        <td class="c-vertical-middle">
-                            <span>FOLLOW ON BLOG LOVIN'</span>
-                        </td>
-                        <td class="c-vertical-middle">
-                            <a href="#comment_input" id="leave_comment" class="comment">LEAVE A COMMENT</a>
-                            &nbsp;/&nbsp;
-                            <a href="#comment_show" id="view_comment" class="comment"><%= blog.comments.count %> COMMENTS</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="comment_input" class="row" style="<%= 'display:none;' unless @comment_show %>" >
-                <div class="col-sm-10 col-sm-offset-1">
-                    <% blog.comments.each do |comment| %>
-                        <div  class="c-comment-area c-font-dayroman">
-                            <h3 class="c-comment-name"><%= comment.name %></h3>
-                            <p class="c-font-dayroman c-comment-content"><%= raw comment.comment %></p>
-                        </div>
-                    <% end %>
-                </div>
-                <br />
-                <br />
-                <div class="col-sm-8 col-sm-offset-2">
-                    <a href="#" id="comment-form"></a>
-                    <%= form_for :comment, url: post_comment_path(blog_id: blog.id, comment_show: true), method: :post do |f| %>
-                        <div class="form-group">
-                            <%= f.label(:name, 'NAME') %>
-                            <%= f.text_field :name, class: 'form-control' %>
-                        </div>
-                        <div class="form-group">
-                            <%= f.label(:comment, 'COMMENT') %>
-                            <%= f.text_area :comment, rows: 5, class: 'form-control' %>
-                        </div>
-                        <button type="submit" class="btn btn-default">SUBMIT</button>
-                        <br />
-                        <br />
-                    <% end %>
-                    <a href="#leave_comment" id="comment_hide"><img src="/assets/panel-up-big.png" style="opacity:0.5;" /></a>
-                </div>
-            </div>
-            <div id="comment_show" class="row" style="display:none;" >
-                <div class="col-sm-10 col-sm-offset-1">
-                    <% blog.comments.each do |comment| %>
-                        <div  class="c-comment-area">
-                            <h3 class="c-comment-name"><%= comment.name %></h3>
-                            <p class="c-font-dayroman c-comment-content"><%= raw comment.comment %></p>
-                        </div>
-                    <% end %>
-                    <a href="#leave_comment" id="comment_hide1"><img src="/assets/panel-up-big.png" style="opacity:0.5;" /></a>
-                </div>
-            </div>
-            <hr />
-        <% end %>
-        <div class="row text-center">
-            <%= will_paginate @main_blogs, :previous_label => 'PREV',
-                :next_label => 'NEXT', renderer: BootstrapPagination::Rails %>
+    <div class="blog_section c-no-padding-bottom">
+        <div class="blog_title">
+            <div class="title_field"><%= @selected_blog.title %></div>
+            <div class="date_field"><%=  @selected_blog.created_at.strftime "%D" %></div>
         </div>
+        <div style="clear:both"></div>
+        <div>
+            <%= image_tag @selected_blog.picture.url, class: "" %>
+        </div>
+        <div class="blog_content">
+            <%= raw @selected_blog.body %>
+            <div id="fl_menu">
+            <div class="label" style="opacity:0.5;">MENU</div>
+            <div class="menu">
+                <% @blog_titles.each do |blog_menu| %>
+                    <%= link_to blog_menu.title, solblog_path(blog_id: blog_menu.id), class: "menu_item" %>
+                <% end %>
+            </div>
+        </div>
+        </div>
+        <br />
+        <table class="table table-bordered">
+            <tr>
+                <td class="c-no-side-border">
+                    <a href="http://instagram.com/mysimplesol" class="share_icon"   target="_blank" title="Share on Instagram">
+                        <img src="/assets/share_instagram.jpg">
+                    </a>
+                    <a href="http://www.pinterest.com/thesimplesol"
+                         class="share_icon" target="_blank" title="Share on Pinterest">
+                        <img src="/assets/share_pinterst.jpg">
+                    </a>
+                    <a href="http://twitter.com/thesimplesol" class="share_icon" 
+                        target="_blank" title="Share on Twitter">
+                        <img src="/assets/share_twitter.jpg">
+                    </a>
+                    <a href="http://www.facebook.com/thesimplesol" 
+                        class="share_icon" target="_blank" title="Share on Facebook">
+                        <img src="/assets/share_facebook.jpg">
+                    </a>
+                </td>
+                <td class="c-vertical-middle c-no-side-border">
+                    <span>FOLLOW ON BLOG LOVIN'</span>
+                </td>
+                <td class="c-vertical-middle c-no-side-border">
+                    <a href="#comment_input" id="leave_comment" class="comment">LEAVE A COMMENT</a>
+                    &nbsp;/&nbsp;
+                    <a href="#comment_show" id="view_comment" class="comment"><%= @selected_blog.comments.count %> COMMENTS</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="comment_input" class="row" style="<%= 'display:none;' unless @comment_show %>" >
+        <div class="col-sm-10 col-sm-offset-1">
+            <% @selected_blog.comments.each do |comment| %>
+                <div  class="c-comment-area c-font-dayroman">
+                    <h3 class="c-comment-name"><%= comment.name %></h3>
+                    <p class="c-font-dayroman c-comment-content"><%= raw comment.comment %></p>
+                </div>
+            <% end %>
+        </div>
+        <br />
+        <br />
+        <div class="col-sm-8 col-sm-offset-2">
+            <a href="#" id="comment-form"></a>
+            <%= form_for :comment, url: post_comment_path(blog_id: @selected_blog.id, comment_show: true), method: :post do |f| %>
+                <div class="form-group">
+                    <%= f.label(:name, 'NAME') %>
+                    <%= f.text_field :name, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <%= f.label(:comment, 'COMMENT') %>
+                    <%= f.text_area :comment, rows: 5, class: 'form-control' %>
+                </div>
+                <button type="submit" class="btn btn-default">SUBMIT</button>
+                <br />
+                <br />
+            <% end %>
+            <a href="#leave_comment" id="comment_hide"><img src="/assets/panel-up-big.png" style="opacity:0.5;" /></a>
+        </div>
+    </div>
+    <div id="comment_show" class="row" style="display:none;" >
+        <div class="col-sm-10 col-sm-offset-1">
+            <% @selected_blog.comments.each do |comment| %>
+                <div  class="c-comment-area">
+                    <h3 class="c-comment-name"><%= comment.name %></h3>
+                    <p class="c-font-dayroman c-comment-content"><%= raw comment.comment %></p>
+                </div>
+            <% end %>
+            <a href="#leave_comment" id="comment_hide1"><img src="/assets/panel-up-big.png" style="opacity:0.5;" /></a>
+        </div>
+    </div>
+    <hr />
+    <br />
+    <br />
 </div>
+
+<script>
+    //config
+    $float_speed=1500; //milliseconds
+    $float_easing="easeOutQuint";
+    $menu_fade_speed=500; //milliseconds
+    $closed_menu_opacity=0.5;
+     
+    //cache vars
+    $fl_menu=$("#fl_menu");
+    $fl_menu_menu=$("#fl_menu .menu");
+    $fl_menu_label=$("#fl_menu .label");
+     
+    $(window).load(function() {
+        //menuPosition=$('#fl_menu').position().top;
+        menuPosition=$('.blog_title').position().top;
+        $fl_menu_label.fadeTo($menu_fade_speed, $closed_menu_opacity);
+        FloatMenu();
+        $fl_menu.hover(
+            function(){ //mouse over
+                $fl_menu_label.fadeTo($menu_fade_speed, 1);
+                $fl_menu_menu.fadeIn($menu_fade_speed);
+            },
+            function(){ //mouse out
+                $fl_menu_label.fadeTo($menu_fade_speed, $closed_menu_opacity);
+                $fl_menu_menu.fadeOut($menu_fade_speed);
+            }
+        );
+    });
+     
+    $(window).scroll(function () {
+        FloatMenu();
+    });
+     
+    function FloatMenu(){
+        var scrollAmount=$(document).scrollTop();
+        var newPosition=menuPosition+scrollAmount;
+        if($(window).height()<$fl_menu.height()+$fl_menu_menu.height()){
+            $fl_menu.css("top", '150px');
+        } else {
+            $fl_menu.stop().animate({top: newPosition}, $float_speed, $float_easing);
+        }
+    }
+</script>

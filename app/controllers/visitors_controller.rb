@@ -7,8 +7,14 @@ class VisitorsController < ApplicationController
 	end
 
 	def solblog
-		@main_blogs = Blog.main_blogs.paginate(page: params[:page], per_page: 1)
+		@blog_titles = Blog.main_blogs
 		@comment_show = params[:comment_show] || false
+
+		if !params[:blog_id].blank?
+			@selected_blog = Blog.find(params[:blog_id])
+		else
+			@selected_blog = Blog.main_blogs.first
+		end
 	end
 
 	def mysol

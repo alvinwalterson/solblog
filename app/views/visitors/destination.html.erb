@@ -82,7 +82,7 @@
                     <% @photos.each do |photo| %>
                         <div>
                             <%= link_to photo.picture.url do %>
-                                <%= image_tag photo.picture.url(:thumb), class: "img-thumbnail", style: "width:150px" %>
+                                <%= image_tag photo.picture.url(:thumb), style: "width:150px" %>
                             <% end %>
                         </div>
                     <% end %>

@@ -419,3 +419,60 @@ input, textarea {
 .c-font-dayroman {
     font-family: 'DayRoman';
 }
+
+.c-no-side-border {
+    border-left: 0px !important;
+    border-right: 0px !important;
+}
+
+.bx-wrapper .bx-caption span {
+  font-size: 40pt;
+}
+
+.bx-wrapper .bx-caption {
+  background-color: transparent;
+}
+
+#fl_menu {
+    position: absolute; 
+    top: 50px; 
+    left: 0px; 
+    z-index: 9999; 
+    width: 150px; 
+    height: 20px;
+}
+
+#fl_menu .label {
+    padding: 0px 0px 0px 20px;
+    line-height: 30px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    background: #E0985B; 
+    color: #fff; 
+    letter-spacing: 7px;
+    display: block;
+    text-align: left;
+    border-radius: 0px;
+    font-family: 'Florencesans';
+}
+
+#fl_menu .menu {
+    display: none;
+    height: 200px;
+    overflow: auto;
+}
+
+#fl_menu .menu .menu_item {
+    display: block; 
+    background: #E0985B; 
+    color: #fff; 
+    border-top: 1px solid #fff; 
+    padding: 5px 10px; 
+    font-size: 12px; 
+    text-decoration: none;
+}
+
+#fl_menu .menu a.menu_item:hover {  
+    background: #333; 
+    color: #fff;
+}

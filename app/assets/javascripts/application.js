@@ -17,15 +17,15 @@
 
 //= require image_slider
 
-  // Instagram Feed Photos
-  var feed = new Instafeed({
-        // get: 'tagged',      
-        // tagName: 'thesimplesol',   // Replace with Sol Blog tag
-        // limit: 12, 
-        // clientId: 'd2eba98f01fb4bbbb2b45f11535a2c33'  // Client ID from Instagram
-        get: 'user',
-        limit: 12,
-        userId: 1452429841,
-        accessToken: '1452429841.467ede5.4064223743964747a1de5d1b23c705ff'
-  });
-  feed.run();
+// Instagram Feed Photos
+var feed = new Instafeed({
+      //get: 'tagged',      
+      //tagName: 'thesimplesol',   // Replace with Sol Blog tag
+      //limit: 12, 
+      //clientId: 'd2eba98f01fb4bbbb2b45f11535a2c33'  // Client ID from Instagram
+      get: 'user',
+      limit: 12,
+      userId: 1452429841,
+      accessToken: '1452429841.d2eba98.3c3ff07b478f4576a7a4a0a3953df89c'
+});
+feed.run();
