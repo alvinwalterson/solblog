@@ -193,6 +193,7 @@
 	background: #666\9;
 	background: rgba(80, 80, 80, 0.75);
 	width: 100%;
+	background-color: transparent;
 }
 
 .bx-wrapper .bx-caption span {
@@ -200,5 +201,7 @@
 	font-family: 'Otto';
 	display: block;
 	font-size: 30pt;
-	padding: 10px;
+	padding: 0px 0px 0px 10px;
+	font-size: 40pt;
+  line-height: 40px;
 }
