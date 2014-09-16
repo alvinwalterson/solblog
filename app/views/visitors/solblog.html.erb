@@ -1,5 +1,9 @@
+<% title @selected_blog.title %>
+<% description truncate(@selected_blog.body, :length => 300) %>
 <div class="main">
-    <h2>SOL BLOG</h2>
+    <div>
+        <h2>SOL BLOG</h2>
+    </div>
     <div class="blog_section c-no-padding-bottom">
         <div class="blog_title">
             <div class="title_field"><%= @selected_blog.title %></div>
@@ -31,14 +35,12 @@
                          class="share_icon" target="_blank" title="Share on Pinterest">
                         <img src="/assets/share_pinterst.jpg">
                     </a>
-                    <a href="http://twitter.com/thesimplesol" class="share_icon" 
-                        target="_blank" title="Share on Twitter">
-                        <img src="/assets/share_twitter.jpg">
-                    </a>
-                    <a href="http://www.facebook.com/thesimplesol" 
-                        class="share_icon" target="_blank" title="Share on Facebook">
-                        <img src="/assets/share_facebook.jpg">
-                    </a>
+                    <%= link_to "http://www.twitter.com/share?url=" + request.original_url, class: "share_icon", title: "Share on Twitter", target: "_blank" do %>
+                        <%= image_tag "share_twitter.jpg" %>
+                    <% end %>
+                    <%= link_to "http://www.facebook.com/sharer.php?u=" + request.original_url + "&t=" + @selected_blog.title, class: "share_icon", title: "Share on Facebook", target: "_blank" do %>
+                        <%= image_tag "share_facebook.jpg" %>
+                    <% end %>
                 </td>
                 <td class="c-vertical-middle c-no-side-border">
                     <span>FOLLOW ON BLOG LOVIN'</span>
@@ -47,6 +49,9 @@
                     <a href="#comment_input" id="leave_comment" class="comment">LEAVE A COMMENT</a>
                     &nbsp;/&nbsp;
                     <a href="#comment_show" id="view_comment" class="comment"><%= @selected_blog.comments.count %> COMMENTS</a>
+                </td>
+                <td class="c-vertical-middle c-no-side-border">
+                    <%= link_to (image_tag 'feed_icon_large.png', size:"18x18", alt: "RSS Feed"), solblog_feed_path %> 
                 </td>
             </tr>
         </table>

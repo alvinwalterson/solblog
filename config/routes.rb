@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   post '/support', to: 'visitors#support', as: 'support'
   post '/solblog', to: 'visitors#post_comment', as: 'post_comment'
 
+  get '/solblog_feed', to: 'visitors#solblog_feed', as: 'solblog_feed', default: {:format => 'rss'}
+
 end

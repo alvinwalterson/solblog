@@ -45,6 +45,13 @@ body {
     color : rgb(60, 60, 60)
 }
 
+div.double_line {
+    border-top : 2px solid rgb(176, 176, 177);
+    border-bottom : 2px solid rgb(176, 176, 177);
+    padding: 2px 0px;
+    width : 100%;
+}
+
 hr {
     border : 0px;
     background-color: rgb(176, 176, 177);

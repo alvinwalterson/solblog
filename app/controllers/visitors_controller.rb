@@ -47,6 +47,12 @@ class VisitorsController < ApplicationController
 		redirect_to solblog_path(comment_show: params[:comment_show]) + "#comment-form"
 	end
 
+	def solblog_feed
+		@feed_blogs = Blog.main_blogs
+
+		render :template => '/feed/feed.rss.builder', :layout => false
+	end
+
 	def permit_comment_params
 		params.require(:comment).permit(:name, :comment)
 	end

@@ -12,4 +12,12 @@ module ApplicationHelper
     /^http/.match(url) ? url : "http://#{url}"
   end
 
+  def title(page_title)
+	  content_for :title, page_title.to_s
+	end
+
+	def description(meta_description)
+	  content_for :description, meta_description.to_s
+	end	
+
 end
