@@ -28,13 +28,6 @@
         <table class="table table-bordered">
             <tr>
                 <td class="c-no-side-border">
-                    <a href="http://instagram.com/mysimplesol" class="share_icon"   target="_blank" title="Share on Instagram">
-                        <img src="/assets/share_instagram.jpg">
-                    </a>
-                    <a href="http://www.pinterest.com/thesimplesol"
-                         class="share_icon" target="_blank" title="Share on Pinterest">
-                        <img src="/assets/share_pinterst.jpg">
-                    </a>
                     <%= link_to "http://www.twitter.com/share?url=" + request.original_url, class: "share_icon", title: "Share on Twitter", target: "_blank" do %>
                         <%= image_tag "share_twitter.jpg" %>
                     <% end %>
@@ -51,7 +44,7 @@
                     <a href="#comment_show" id="view_comment" class="comment"><%= @selected_blog.comments.count %> COMMENTS</a>
                 </td>
                 <td class="c-vertical-middle c-no-side-border">
-                    <%= link_to (image_tag 'feed_icon_large.png', size:"18x18", alt: "RSS Feed"), solblog_feed_path %> 
+                    <%= link_to (image_tag 'feed_icon_large.png', size:"18x18", alt: "RSS Feed"), solblog_feed_path, target: "_blank" %> 
                 </td>
             </tr>
         </table>
