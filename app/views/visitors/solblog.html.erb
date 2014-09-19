@@ -94,9 +94,10 @@
     </div>
     <hr />
     
-    <div class="col-sm-6 col-sm-offset-3">
-        <%= will_paginate @main_blogs, renderer: BootstrapPagination::Rails, :previous_label => "PREV", :next_label => "NEXT", params: {comment_show: false} %>  
+    <div class="col-md-8 col-md-offset-2" style="text-align:center">
+        <%= will_paginate @main_blogs, renderer: BootstrapPagination::Rails, :inner_window => 1, :outer_window => 1, :previous_label => "PREV", :next_label => "NEXT", params: {comment_show: false} %>  
     </div>
+    
     <br />
     <br />
 </div>
