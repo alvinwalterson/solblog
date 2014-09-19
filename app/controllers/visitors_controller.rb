@@ -7,13 +7,13 @@ class VisitorsController < ApplicationController
 	end
 
 	def solblog
+		@main_blogs = Blog.main_blogs.paginate(:page => params[:page], :per_page => 1)
+		@selected_blog = @main_blogs.first
 		@blog_titles = Blog.main_blogs
 		@comment_show = params[:comment_show] || false
 
-		if !params[:blog_id].blank?
-			@selected_blog = Blog.find(params[:blog_id])
-		else
-			@selected_blog = Blog.main_blogs.first
+		if params[:page].blank? && !params[:blog_id].blank?
+			@selected_blog = Blog.where(id: params[:blog_id]).first
 		end
 	end
 
@@ -44,7 +44,7 @@ class VisitorsController < ApplicationController
 	def post_comment
 		@blog = Blog.find(params[:blog_id])
 		@comment = @blog.comments.create permit_comment_params
-		redirect_to solblog_path(comment_show: params[:comment_show]) + "#comment-form"
+		redirect_to solblog_path(page: params[:page], comment_show: true) + "#comment-form"
 	end
 
 	def solblog_feed

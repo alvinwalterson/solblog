@@ -1,9 +1,10 @@
-<% title @selected_blog.title %>
-<% description truncate(@selected_blog.body, :length => 300) %>
 <div class="main">
     <div>
         <h2>SOL BLOG</h2>
     </div>
+    
+    <% title @selected_blog.title %>
+    <% description truncate(@selected_blog.body, :length => 300) %>
     <div class="blog_section c-no-padding-bottom">
         <div class="blog_title">
             <div class="title_field"><%= @selected_blog.title %></div>
@@ -15,6 +16,7 @@
         </div>
         <div class="blog_content">
             <%= raw @selected_blog.body %>
+            <!-- This part is for floating menu
             <div id="fl_menu">
             <div class="label" style="opacity:0.5;">MENU</div>
             <div class="menu">
@@ -22,16 +24,17 @@
                     <%= link_to blog_menu.title, solblog_path(blog_id: blog_menu.id), class: "menu_item" %>
                 <% end %>
             </div>
+            -->
         </div>
         </div>
         <br />
         <table class="table table-bordered">
             <tr>
                 <td class="c-no-side-border">
-                    <%= link_to "http://www.twitter.com/share?url=" + request.original_url, class: "share_icon", title: "Share on Twitter", target: "_blank" do %>
+                    <%= link_to "http://www.twitter.com/share?url=" + root_url + "solblog?blog_id=" + @selected_blog.id.to_s, class: "share_icon", title: "Share on Twitter", target: "_blank" do %>
                         <%= image_tag "share_twitter.jpg" %>
                     <% end %>
-                    <%= link_to "http://www.facebook.com/sharer.php?u=" + request.original_url + "&t=" + @selected_blog.title, class: "share_icon", title: "Share on Facebook", target: "_blank" do %>
+                    <%= link_to "http://www.facebook.com/sharer.php?u=" + root_url + "solblog?blog_id=" + @selected_blog.id.to_s + "&t=" + @selected_blog.title, class: "share_icon", title: "Share on Facebook", target: "_blank" do %>
                         <%= image_tag "share_facebook.jpg" %>
                     <% end %>
                 </td>
@@ -49,7 +52,7 @@
             </tr>
         </table>
     </div>
-    <div id="comment_input" class="row" style="<%= 'display:none;' unless @comment_show %>" >
+    <div id="comment_input" class="row" style="<%= @comment_show == 'true' ? '' : 'display: none;' %>">
         <div class="col-sm-10 col-sm-offset-1">
             <% @selected_blog.comments.each do |comment| %>
                 <div  class="c-comment-area c-font-dayroman">
@@ -62,7 +65,7 @@
         <br />
         <div class="col-sm-8 col-sm-offset-2">
             <a href="#" id="comment-form"></a>
-            <%= form_for :comment, url: post_comment_path(blog_id: @selected_blog.id, comment_show: true), method: :post do |f| %>
+            <%= form_for :comment, url: post_comment_path(blog_id: @selected_blog.id, page: params[:page]), method: :post do |f| %>
                 <div class="form-group">
                     <%= f.label(:name, 'NAME') %>
                     <%= f.text_field :name, class: 'form-control' %>
@@ -90,6 +93,10 @@
         </div>
     </div>
     <hr />
+    
+    <div class="col-sm-6 col-sm-offset-3">
+        <%= will_paginate @main_blogs, renderer: BootstrapPagination::Rails, :previous_label => "PREV", :next_label => "NEXT", params: {comment_show: false} %>  
+    </div>
     <br />
     <br />
 </div>
