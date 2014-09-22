@@ -4,7 +4,7 @@
     </div>
     
     <% title @selected_blog.title %>
-    <% description truncate(@selected_blog.body, :length => 300) %>
+    <% description @selected_blog.title %>
     <div class="blog_section c-no-padding-bottom">
         <div class="blog_title">
             <div class="title_field"><%= @selected_blog.title %></div>
