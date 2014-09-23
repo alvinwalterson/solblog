@@ -26,6 +26,6 @@ var feed = new Instafeed({
       get: 'user',
       limit: 12,
       userId: 1452429841,
-      accessToken: '1452429841.d2eba98.3c3ff07b478f4576a7a4a0a3953df89c'
+      accessToken: '1452429841.d2eba98.54e4018b86ce48da80d31a4049ab05b3'
 });
 feed.run();
