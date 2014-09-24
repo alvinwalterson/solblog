@@ -93,7 +93,6 @@ $link-active-color: rgb(244, 173, 112);
     height:70px !important;
     .title {
         font-size: 100px !important;
-        line-height: 100px !important;
     }
     img {
         position: absolute;
@@ -108,12 +107,15 @@ $link-active-color: rgb(244, 173, 112);
     height:100px !important;
     .title {
         font-size: 100px !important;
-        line-height: 100px !important;
     }
     img {
         position: absolute;
         top: -50%;
     }
+  }
+
+  .menu_dot {
+    display: none !important;
   }
 }
 
@@ -179,13 +181,17 @@ $link-active-color: rgb(244, 173, 112);
   hr {
     margin: 3px 0px !important;
   }
+
+  .menu_dot {
+    display: none !important;
+  }
 }
 
 h4 {
   text-align: center;
 }
 
-.nav li a {
+.navbar-nav li a {
     color: $link-color;
     font-family: 'Florencesans';
     font-size: 10pt;
@@ -203,20 +209,28 @@ a:hover, a:focus, a:active {
   outline: none;
   border: none;
   text-decoration: none;
+  background: transparent !important;
 }
 
-.nav .open > a:hover,
-.nav .open > a:focus {
-  background: transparent;
+
+
+.navbar-default .navbar-nav > .open > a {
+  background: transparent !important;
 }
 
-.nav li > a:hover, .nav li > a:focus {
-  color: $link-active-color;
-  background: transparent;
+.navbar-nav .open > a:hover,
+.navbar-nav .open > a:focus {
+  background: transparent !important;
+}
+
+.navbar-nav li > a:hover, 
+.navbar-nav li > a:focus {
+  color: $link-active-color !important;
+  background: transparent !important;
 }
 
 .dropdown-menu > li > a {
-  text-align: left;
+  text-align: left !important;
 }
 
 .pagination > li > a {
